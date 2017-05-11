@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+  let masterList = try! Realm().objects(ItemList.self).filter("id = '1'")
+  let customListFromAppDelegate = try! Realm().objects(ItemList.self).filter("id = '2'")
+  
   var window: UIWindow?
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    UITableViewCell.appearance().backgroundColor = UIColor.clear
+    checkIfMasterListExists()
+    
+    let config = Realm.Configuration(
+      schemaVersion: 1,
+      
+      migrationBlock: { migration, oldSchemaVersion in
+        if (oldSchemaVersion < 1) {
+          
+        }
+        
+    })
+    
+    Realm.Configuration.defaultConfiguration = config
+    
+    // for migrating database if needed
+    let realm = try! Realm()
+    
     return true
   }
 
@@ -41,6 +64,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
+  
+  func checkIfMasterListExists() {
+    
+    if masterList.count == 0 {
+      print("Master List Being Created")
+      DataManager.populateRealm()
+    } else {
+      _ = masterList.first!
+      print("Master List Exists")
+    }
+  }
 
 }
 

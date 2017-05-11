@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		008AFA501EC511760088345F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA4F1EC511760088345F /* AppDelegate.swift */; };
 		008AFA521EC511760088345F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA511EC511760088345F /* ViewController.swift */; };
-		008AFA551EC511760088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA531EC511760088345F /* Main.storyboard */; };
+		008AFA551EC511760088345F /* OldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA531EC511760088345F /* OldMain.storyboard */; };
 		008AFA571EC511760088345F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA561EC511760088345F /* Assets.xcassets */; };
 		008AFA5A1EC511760088345F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA581EC511760088345F /* LaunchScreen.storyboard */; };
 		008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA641EC511760088345F /* knapsack2Tests.swift */; };
@@ -17,6 +17,39 @@
 		008AFA7E1EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
 		008AFA7F1EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
 		008AFA801EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
+		008AFA831EC5236C0088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA821EC5236C0088345F /* Main.storyboard */; };
+		008AFA841EC5236C0088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA821EC5236C0088345F /* Main.storyboard */; };
+		008AFA851EC5236C0088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA821EC5236C0088345F /* Main.storyboard */; };
+		008AFA911EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */; };
+		008AFA921EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */; };
+		008AFA931EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */; };
+		008AFA941EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */; };
+		008AFA951EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */; };
+		008AFA961EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */; };
+		008AFA971EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */; };
+		008AFA981EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */; };
+		008AFA991EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */; };
+		008AFA9A1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		008AFA9B1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		008AFA9C1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		008AFA9E1EC524930088345F /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA9D1EC524930088345F /* TripViewController.swift */; };
+		008AFA9F1EC524930088345F /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA9D1EC524930088345F /* TripViewController.swift */; };
+		008AFAA01EC524930088345F /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA9D1EC524930088345F /* TripViewController.swift */; };
+		008AFAA21EC524F20088345F /* MasterItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA11EC524F20088345F /* MasterItems.swift */; };
+		008AFAA31EC524F20088345F /* MasterItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA11EC524F20088345F /* MasterItems.swift */; };
+		008AFAA41EC524F20088345F /* MasterItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA11EC524F20088345F /* MasterItems.swift */; };
+		008AFAA61EC524FA0088345F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA51EC524F90088345F /* Trip.swift */; };
+		008AFAA71EC524FA0088345F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA51EC524F90088345F /* Trip.swift */; };
+		008AFAA81EC524FA0088345F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA51EC524F90088345F /* Trip.swift */; };
+		008AFAAA1EC525090088345F /* MasterItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA91EC525090088345F /* MasterItemList.swift */; };
+		008AFAAB1EC525090088345F /* MasterItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA91EC525090088345F /* MasterItemList.swift */; };
+		008AFAAC1EC525090088345F /* MasterItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAA91EC525090088345F /* MasterItemList.swift */; };
+		008AFAAE1EC527ED0088345F /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAAD1EC527ED0088345F /* TripListViewController.swift */; };
+		008AFAAF1EC527ED0088345F /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAAD1EC527ED0088345F /* TripListViewController.swift */; };
+		008AFAB01EC527ED0088345F /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAAD1EC527ED0088345F /* TripListViewController.swift */; };
+		008AFAB21EC527FA0088345F /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAB11EC527FA0088345F /* NewTripViewController.swift */; };
+		008AFAB31EC527FA0088345F /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAB11EC527FA0088345F /* NewTripViewController.swift */; };
+		008AFAB41EC527FA0088345F /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAB11EC527FA0088345F /* NewTripViewController.swift */; };
 		5A8C7020154476A0140010E2 /* Pods_knapsack2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A39B9032EEC59F91D9E790 /* Pods_knapsack2Tests.framework */; };
 		E6572C7AE6F5531E6C770CCE /* Pods_knapsack2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +75,7 @@
 		008AFA4C1EC511760088345F /* knapsack2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = knapsack2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008AFA4F1EC511760088345F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		008AFA511EC511760088345F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		008AFA541EC511760088345F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		008AFA541EC511760088345F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OldMain.storyboard; sourceTree = "<group>"; };
 		008AFA561EC511760088345F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		008AFA591EC511760088345F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		008AFA5B1EC511760088345F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +86,24 @@
 		008AFA6F1EC511760088345F /* knapsack2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knapsack2UITests.swift; sourceTree = "<group>"; };
 		008AFA711EC511760088345F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008AFA7D1EC511A40088345F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		008AFA821EC5236C0088345F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		008AFA861EC5242B0088345F /* knapsack2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knapsack2-Bridging-Header.h"; sourceTree = "<group>"; };
+		008AFA871EC5242B0088345F /* knapsack2Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knapsack2Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		008AFA881EC5242B0088345F /* knapsack2UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knapsack2UITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		008AFA891EC5242C0088345F /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		008AFA8B1EC5242C0088345F /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		008AFA8D1EC5242C0088345F /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		008AFA8F1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		008AFA9D1EC524930088345F /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		008AFAA11EC524F20088345F /* MasterItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterItems.swift; sourceTree = "<group>"; };
+		008AFAA51EC524F90088345F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		008AFAA91EC525090088345F /* MasterItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterItemList.swift; sourceTree = "<group>"; };
+		008AFAAD1EC527ED0088345F /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		008AFAB11EC527FA0088345F /* NewTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		22C84A99B9CD129F7809FB60 /* Pods-knapsack2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2/Pods-knapsack2.debug.xcconfig"; sourceTree = "<group>"; };
 		5882B79A74C4505105D79282 /* Pods-knapsack2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_knapsack2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,8 +164,14 @@
 		008AFA4E1EC511760088345F /* knapsack2 */ = {
 			isa = PBXGroup;
 			children = (
-				008AFA531EC511760088345F /* Main.storyboard */,
+				008AFA821EC5236C0088345F /* Main.storyboard */,
+				008AFA9D1EC524930088345F /* TripViewController.swift */,
+				008AFAAD1EC527ED0088345F /* TripListViewController.swift */,
+				008AFAB11EC527FA0088345F /* NewTripViewController.swift */,
 				008AFA511EC511760088345F /* ViewController.swift */,
+				008AFAA11EC524F20088345F /* MasterItems.swift */,
+				008AFAA51EC524F90088345F /* Trip.swift */,
+				008AFAA91EC525090088345F /* MasterItemList.swift */,
 				008AFA811EC521E90088345F /* Support Files */,
 			);
 			path = knapsack2;
@@ -142,10 +199,22 @@
 			isa = PBXGroup;
 			children = (
 				008AFA561EC511760088345F /* Assets.xcassets */,
+				008AFA891EC5242C0088345F /* TPKeyboardAvoidingCollectionView.h */,
+				008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */,
+				008AFA8B1EC5242C0088345F /* TPKeyboardAvoidingScrollView.h */,
+				008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */,
+				008AFA8D1EC5242C0088345F /* TPKeyboardAvoidingTableView.h */,
+				008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */,
+				008AFA8F1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				008AFA531EC511760088345F /* OldMain.storyboard */,
 				008AFA5B1EC511760088345F /* Info.plist */,
 				008AFA4F1EC511760088345F /* AppDelegate.swift */,
 				008AFA7D1EC511A40088345F /* Podfile */,
 				008AFA581EC511760088345F /* LaunchScreen.storyboard */,
+				008AFA861EC5242B0088345F /* knapsack2-Bridging-Header.h */,
+				008AFA871EC5242B0088345F /* knapsack2Tests-Bridging-Header.h */,
+				008AFA881EC5242B0088345F /* knapsack2UITests-Bridging-Header.h */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -245,17 +314,20 @@
 					008AFA4B1EC511760088345F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LWH67H9CS7;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					008AFA5F1EC511760088345F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LWH67H9CS7;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 008AFA4B1EC511760088345F;
 					};
 					008AFA6A1EC511760088345F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LWH67H9CS7;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 008AFA4B1EC511760088345F;
 					};
@@ -287,9 +359,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA5A1EC511760088345F /* LaunchScreen.storyboard in Resources */,
+				008AFA831EC5236C0088345F /* Main.storyboard in Resources */,
 				008AFA571EC511760088345F /* Assets.xcassets in Resources */,
 				008AFA7E1EC511A40088345F /* Podfile in Resources */,
-				008AFA551EC511760088345F /* Main.storyboard in Resources */,
+				008AFA551EC511760088345F /* OldMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA7F1EC511A40088345F /* Podfile in Resources */,
+				008AFA841EC5236C0088345F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA801EC511A40088345F /* Podfile in Resources */,
+				008AFA851EC5236C0088345F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +485,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA521EC511760088345F /* ViewController.swift in Sources */,
+				008AFA9A1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				008AFAB21EC527FA0088345F /* NewTripViewController.swift in Sources */,
+				008AFAAA1EC525090088345F /* MasterItemList.swift in Sources */,
+				008AFAA21EC524F20088345F /* MasterItems.swift in Sources */,
+				008AFAAE1EC527ED0088345F /* TripListViewController.swift in Sources */,
+				008AFAA61EC524FA0088345F /* Trip.swift in Sources */,
+				008AFA9E1EC524930088345F /* TripViewController.swift in Sources */,
+				008AFA971EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
+				008AFA941EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				008AFA911EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFA501EC511760088345F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +503,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008AFA951EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				008AFA981EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
+				008AFAAB1EC525090088345F /* MasterItemList.swift in Sources */,
+				008AFAAF1EC527ED0088345F /* TripListViewController.swift in Sources */,
+				008AFAB31EC527FA0088345F /* NewTripViewController.swift in Sources */,
+				008AFA921EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				008AFA9F1EC524930088345F /* TripViewController.swift in Sources */,
+				008AFAA71EC524FA0088345F /* Trip.swift in Sources */,
 				008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */,
+				008AFA9B1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				008AFAA31EC524F20088345F /* MasterItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +521,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008AFA961EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				008AFA991EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
+				008AFAAC1EC525090088345F /* MasterItemList.swift in Sources */,
+				008AFAB01EC527ED0088345F /* TripListViewController.swift in Sources */,
+				008AFAB41EC527FA0088345F /* NewTripViewController.swift in Sources */,
+				008AFA931EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				008AFAA01EC524930088345F /* TripViewController.swift in Sources */,
+				008AFAA81EC524FA0088345F /* Trip.swift in Sources */,
 				008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */,
+				008AFA9C1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				008AFAA41EC524F20088345F /* MasterItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +551,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		008AFA531EC511760088345F /* Main.storyboard */ = {
+		008AFA531EC511760088345F /* OldMain.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				008AFA541EC511760088345F /* Base */,
 			);
-			name = Main.storyboard;
+			name = OldMain.storyboard;
 			sourceTree = "<group>";
 		};
 		008AFA581EC511760088345F /* LaunchScreen.storyboard */ = {
@@ -565,11 +670,14 @@
 			baseConfigurationReference = 22C84A99B9CD129F7809FB60 /* Pods-knapsack2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -579,11 +687,13 @@
 			baseConfigurationReference = A2F59DC21266F2015067BC67 /* Pods-knapsack2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -594,11 +704,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/knapsack2.app/knapsack2";
 			};
@@ -610,11 +723,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2Tests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/knapsack2.app/knapsack2";
 			};
@@ -624,11 +739,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2UITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = knapsack2;
 			};
@@ -638,11 +756,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2UITests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = knapsack2;
 			};
