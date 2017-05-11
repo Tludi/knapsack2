@@ -14,6 +14,9 @@
 		008AFA5A1EC511760088345F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA581EC511760088345F /* LaunchScreen.storyboard */; };
 		008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA641EC511760088345F /* knapsack2Tests.swift */; };
 		008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA6F1EC511760088345F /* knapsack2UITests.swift */; };
+		008AFA7E1EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
+		008AFA7F1EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
+		008AFA801EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,7 @@
 		008AFA6B1EC511760088345F /* knapsack2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = knapsack2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		008AFA6F1EC511760088345F /* knapsack2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knapsack2UITests.swift; sourceTree = "<group>"; };
 		008AFA711EC511760088345F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		008AFA7D1EC511A40088345F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				008AFA631EC511760088345F /* knapsack2Tests */,
 				008AFA6E1EC511760088345F /* knapsack2UITests */,
 				008AFA4D1EC511760088345F /* Products */,
+				008AFA7D1EC511A40088345F /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +242,7 @@
 			files = (
 				008AFA5A1EC511760088345F /* LaunchScreen.storyboard in Resources */,
 				008AFA571EC511760088345F /* Assets.xcassets in Resources */,
+				008AFA7E1EC511A40088345F /* Podfile in Resources */,
 				008AFA551EC511760088345F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008AFA7F1EC511A40088345F /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008AFA801EC511A40088345F /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
