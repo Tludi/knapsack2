@@ -6,14 +6,14 @@ use_frameworks!
 
 target 'knapsack2' do
 #  pod "Realm"
-  pod "RealmSwift", '~> 1.0'
+  pod "RealmSwift"
   pod "Firebase/Core"
   pod "Firebase/AdMob"
 end
 
 target 'knapsack2Tests' do
 #  pod "Realm"
-  pod "RealmSwift", '~> 1.0'
+  pod "RealmSwift"
   pod "Firebase/Core"
   pod "Firebase/AdMob"
 end
