@@ -68,9 +68,6 @@
 		00CF0CE91EC62F4200AAF0BD /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */; };
 		00CF0CEA1EC62F4200AAF0BD /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */; };
 		00CF0CEB1EC62F4200AAF0BD /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */; };
-		00CF0CED1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */; };
-		00CF0CEE1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */; };
-		00CF0CEF1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */; };
 		00CF0CF11EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */; };
 		00CF0CF21EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */; };
 		00CF0CF31EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */; };
@@ -140,7 +137,6 @@
 		00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemViewController.swift; sourceTree = "<group>"; };
 		00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
-		00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPageViewController.swift; sourceTree = "<group>"; };
 		00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -215,7 +211,6 @@
 				00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */,
 				00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */,
 				00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */,
-				00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */,
 				008AFA511EC511760088345F /* ViewController.swift */,
 				008AFAA11EC524F20088345F /* MasterItems.swift */,
 				008AFAA51EC524F90088345F /* Trip.swift */,
@@ -540,7 +535,6 @@
 				008AFA521EC511760088345F /* ViewController.swift in Sources */,
 				008AFA9A1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CE51EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
-				00CF0CED1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */,
 				00CF0CF11EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CE91EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
 				008AFAB21EC527FA0088345F /* NewTripViewController.swift in Sources */,
@@ -581,7 +575,6 @@
 				008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */,
 				008AFA9B1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CF21EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
-				00CF0CEE1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */,
 				00CF0CD61EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
 				00CF0CDE1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 				008AFAA31EC524F20088345F /* MasterItems.swift in Sources */,
@@ -608,7 +601,6 @@
 				008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */,
 				008AFA9C1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CF31EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
-				00CF0CEF1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */,
 				00CF0CD71EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
 				00CF0CDF1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 				008AFAA41EC524F20088345F /* MasterItems.swift in Sources */,

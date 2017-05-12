@@ -11,8 +11,8 @@ import RealmSwift
 
 
 class NewListViewController: UIViewController {
-  let allLists = try! Realm().objects(ItemList)
-  let masterList = try! Realm().objects(ItemList).filter("id = '1'")
+  let allLists = try! Realm().objects(ItemList.self)
+  let masterList = try! Realm().objects(ItemList.self).filter("id = '1'")
   
 
   @IBOutlet weak var masterItemCount: UILabel!

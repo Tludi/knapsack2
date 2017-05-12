@@ -11,7 +11,7 @@ import RealmSwift
 
 class CustomItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   var realm = try! Realm()
-  let customList = try! Realm().objects(ItemList).filter("id = '2'").first!
+  let customList = try! Realm().objects(ItemList.self).filter("id = '2'").first!
 
   
   @IBOutlet weak var customItemTable: UITableView!
@@ -27,15 +27,15 @@ class CustomItemViewController: UIViewController, UITableViewDelegate, UITableVi
     
     if let newItemName = addItemField.text {
       if newItemName == "" {
-        let noNameAlert = UIAlertController(title: "Item Name", message: "Name Can Not Be Blank", preferredStyle: .Alert)
-        noNameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
+        let noNameAlert = UIAlertController(title: "Item Name", message: "Name Can Not Be Blank", preferredStyle: .alert)
+        noNameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
           return
         }))
-        self.presentViewController(noNameAlert, animated: true, completion: nil)
+        self.present(noNameAlert, animated: true, completion: nil)
       } else {
-        newItem.id = NSUUID().UUIDString
+        newItem.id = NSUUID().uuidString
         newItem.itemCategory = "custom items"
-        newItem.itemName = (addItemField.text?.capitalizedString)!
+        newItem.itemName = (addItemField.text?.capitalized)!
     
         try! realm.write {
           customList.items.append(newItem)
@@ -63,12 +63,13 @@ class CustomItemViewController: UIViewController, UITableViewDelegate, UITableVi
     return 1
   }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return customList.items.count
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("customItemCell", forIndexPath: indexPath)
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "customItemCell", for: indexPath)
+//    let cell = tableView.dequeueReusableCellWithIdentifier("customItemCell", forIndexPath: indexPath as IndexPath)
     let customItems = customList.items
     let customItem = customItems[indexPath.row]
     let customItemLabel = cell.contentView.viewWithTag(1) as! UILabel
@@ -82,38 +83,34 @@ class CustomItemViewController: UIViewController, UITableViewDelegate, UITableVi
   
   
   //*** Edit and Delete Custom Items
-
-  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
-  
-  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
   }
   
   
-  
-  //  Trip table cell actions - Edit, Delete
-  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    
-    
-    
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     
     // Delete trip functions
-    let deleteCellAction = UITableViewRowAction(style: .Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+    let deleteCellAction = UITableViewRowAction(style: .default, title: "    ") {
+      (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+//    let deleteCellAction = UITableViewRowAction(style: .Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
       print("delete action")
-      let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .Alert)
-      deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction) in
+      let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .alert)
+      deleteAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction) in
         try! self.realm.write {
           let selectedItem = self.customList.items[indexPath.row]
           self.realm.delete(selectedItem)
         }
         
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
       }))
-      deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction) in
+      deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction) in
         return
       }))
-      self.presentViewController(deleteAlert, animated: true, completion: nil)
+      self.present(deleteAlert, animated: true, completion: nil)
     }
     
     let deleteImage = UIImage(named: "deleteBoxMD.png")!

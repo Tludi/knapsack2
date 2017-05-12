@@ -41,7 +41,8 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   }
 
   // set two sections - One for "All Items" and one for Categories
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
+//  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 3
   }
   
@@ -75,8 +76,9 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   
   //*** Print the cells based on (1)all items, (2)custom intems and 
   //*** (3) categories of items selected  ***//
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath as IndexPath) 
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ 
+    let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
     let tripList = chosenTrip.lists[0]
     // Items from main list
     let selectedItems = tripList.items.filter("itemCount > 0")
@@ -161,10 +163,9 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   }
   
   
-  
-  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showListItems" {
-      if let destinationController = segue.destinationViewController as? ListItemsViewController {
+      if let destinationController = segue.destination as? ListItemsViewController {
         if let listPath = listTable.indexPathForSelectedRow {
           let cell = tableView(listTable, cellForRowAtIndexPath: listPath)
           let category = cell.contentView.viewWithTag(1) as! UILabel

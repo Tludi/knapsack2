@@ -12,15 +12,16 @@ import RealmSwift
 class ArchiveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   var realm = try! Realm()
-  var allTrips = try! Realm().objects(Trip)
+  var allTrips = try! Realm().objects(Trip.self)
   
-  var archivedTrips = try! Realm().objects(Trip).filter("archived = true").sorted("startDate")
+  var archivedTrips = try! Realm().objects(Trip.self).filter("archived = true").sorted(byKeyPath: "startDate")
   var selectedTrip = Trip()
   var showActiveTrips = true
   
   // get version and build of current app
-  let version: AnyObject = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]!
-  let build: AnyObject = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"]!
+  let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"]!
+//  let version: AnyObject = Bundle.mainBundle.infoDictionary!["CFBundleShortVersionString"]!
+  let build = Bundle.main.infoDictionary!["CFBundleVersion"]!
   
   @IBOutlet weak var archiveTable: UITableView!
   
@@ -38,17 +39,16 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
     self.title = "Archived Trips"
   }
   
-  override func viewWillAppear(animated: Bool) {
+  func viewWillAppear() {
     archiveTable.reloadData()
   }
   
-  
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return archivedTrips.count
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("archiveTripCell", forIndexPath: indexPath) 
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "archiveTripCell", for: indexPath)
     let trip = archivedTrips[indexPath.row]
     
     
@@ -75,25 +75,27 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
     return cell
   }
   
-  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
   
-  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
   }
   
-  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     
     //****************** Copy trip functions
     //************* need to correct code for when there are more than one lists
     
-    let copyCellAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "    "){ (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+    let copyCellAction = UITableViewRowAction(style: .default, title: "    ") {
+      (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+      
+//    let copyCellAction = UITableViewRowAction(style: default, title: "    "){ (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
       
       self.selectedTrip = self.archivedTrips[indexPath.row]
       // set new trip
       let copiedTrip = Trip()
-      copiedTrip.id = NSUUID().UUIDString
+      copiedTrip.id = NSUUID().uuidString
       copiedTrip.tripName = "\(self.selectedTrip.tripName)Copy"
       copiedTrip.startDate = self.selectedTrip.startDate
       copiedTrip.numberOfDays = self.selectedTrip.numberOfDays
@@ -104,7 +106,7 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
       
       for originalList in self.selectedTrip.lists {
         let newList = ItemList()
-        newList.id = NSUUID().UUIDString
+        newList.id = NSUUID().uuidString
         newList.listName = originalList.listName
         
         try! self.realm.write {
@@ -115,7 +117,7 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
       // only copies the first list items
       for eachItem in self.selectedTrip.lists.first!.items {
         let newItem = Item()
-        newItem.id = NSUUID().UUIDString
+        newItem.id = NSUUID().uuidString
         newItem.itemName = eachItem.itemName
         newItem.itemCount = eachItem.itemCount
         newItem.itemCategory = eachItem.itemCategory
@@ -132,20 +134,22 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     // Delete trip functions
-    let deleteCellAction = UITableViewRowAction(style: .Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+    let deleteCellAction = UITableViewRowAction(style: .default, title: "    ") {
+      (action: UITableViewRowAction, indexPath: IndexPath) -> Void in
+    
       print("delete action")
-      let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .Alert)
-      deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction) in
+      let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .alert)
+      deleteAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction) in
         try! self.realm.write {
           let selectedTrip = self.archivedTrips[indexPath.row]
           self.realm.delete(selectedTrip)
         }
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
       }))
-      deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction) in
+      deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction) in
         return
       }))
-      self.presentViewController(deleteAlert, animated: true, completion: nil)
+      self.present(deleteAlert, animated: true, completion: nil)
     }
     
     let deleteImage = UIImage(named: "deleteBoxLG.png")!
@@ -155,9 +159,9 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
     return [deleteCellAction, copyCellAction]
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showTripListsFromArchive" {
-      if let destinationController = segue.destinationViewController as? TripListViewController {
+      if let destinationController = segue.destination as? TripListViewController {
         if let tripIndex = archiveTable.indexPathForSelectedRow {
           let chosenTrip = archivedTrips[tripIndex.row]
           destinationController.chosenTrip = chosenTrip

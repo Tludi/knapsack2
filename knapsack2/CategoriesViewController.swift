@@ -13,19 +13,19 @@ import RealmSwift
 class CategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   var realm = try! Realm()
-  var trips = try! Realm().objects(Trip)
+  var trips = try! Realm().objects(Trip.self)
   var passedList = ItemList()
   var passedTrip = Trip()
   
   var allItems = MasterItemList()
-  var categories = MasterItemList().categories.sort()
-  let customList = try! Realm().objects(ItemList).filter("id = '2'").first!
+  var categories = MasterItemList().categories.sorted()
+  let customList = try! Realm().objects(ItemList.self).filter("id = '2'").first!
   
   @IBOutlet weak var categoryTable: UITableView!
   @IBOutlet weak var tripLengthLabel: UILabel!
   
   
-  override func viewWillAppear(animated: Bool) {
+  func viewWillAppear() {
     categoryTable.reloadData()
   }
   
@@ -40,7 +40,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     return 2
   }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 1 {
       return allItems.categories.count
     } else {
@@ -52,8 +52,8 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     }
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("itemCell", forIndexPath: indexPath)
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
     let categoryLabelName = cell.contentView.viewWithTag(1) as! UILabel
     let categoryImage = cell.contentView.viewWithTag(5) as! UIImageView
     
@@ -63,7 +63,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     } else if indexPath.section == 1 {
       
       let category = categories[indexPath.row]
-      categoryLabelName.text = category.capitalizedString
+      categoryLabelName.text = category.capitalized
     
     // Image for Category
     // Image Icon needs to be named 'category'Icon
@@ -74,10 +74,9 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     
   }
 
-  
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showCategoryItems" {
-      if let destinationController = segue.destinationViewController as? CategoryListViewController {
+      if let destinationController = segue.destination as? CategoryListViewController {
         
         if let categoryIndex = categoryTable.indexPathForSelectedRow {
           var categoryToPass = ""
