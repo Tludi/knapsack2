@@ -28,7 +28,10 @@ class NewTripViewController: UIViewController {
     let datePickerView:UIDatePicker = UIDatePicker()
     datePickerView.datePickerMode = UIDatePickerMode.date
     sender.inputView = datePickerView
-    datePickerView.addTarget(self, action: #selector(NewTripViewController.datePickerValueChanged(_:)), for: UIControlEvents.ValueChanged)
+    
+    datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
+    
+//    datePickerView.addTarget(self, action: #selector(NewTripViewController.datePickerValueChanged(_:)), for: UIControlEvents.ValueChanged)
     
     // The above code used to be the following. Changed by swift 2.2 and 3
     //  datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
@@ -167,10 +170,6 @@ class NewTripViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
 //    addtripButtonLabel.setTitle("\(editButtonLabel)", forState: .Normal)
   }
-
-
-  
-
 
   
   func datePickerValueChanged(sender:UIDatePicker) {

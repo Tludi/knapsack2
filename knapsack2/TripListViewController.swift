@@ -13,9 +13,9 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
 
   // Trip selected
   var chosenTrip = Trip()
-  let customList = try! Realm().objects(ItemList).filter("id = '2'").first!
+  let customList = try! Realm().objects(ItemList.self).filter("id = '2'").first!
   // why is this here?
-  var allTrips = try! Realm().objects(Trip)
+  var allTrips = try! Realm().objects(Trip.self)
 
   @IBOutlet weak var listTable: UITableView!
   @IBOutlet weak var tripNameLabel: UILabel!
@@ -25,7 +25,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   override func viewDidLoad() {
     super.viewDidLoad()
     // try to hide the addButton. Show for testing
-    addButton.tintColor = UIColor.clearColor()
+    addButton.tintColor = UIColor.clear
     // set trip label to name of current trip
     tripNameLabel.text = chosenTrip.tripName
     // Set label of current page
@@ -36,7 +36,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
     
   }
   
-  override func viewWillAppear(animated: Bool) {
+  func viewWillAppear() {
     listTable.reloadData()
   }
 
@@ -49,7 +49,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   //*** Get number of rows per section **//
   //*** First section has only 1 row for all items ***//
   //*** Second section has rows based on categories that have items selected ***//
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     let tripLists = chosenTrip.lists
     let selectedItems = tripLists[0].items.filter("itemCount > 0")
     var selectedCategories = [String]()
@@ -76,7 +76,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   //*** Print the cells based on (1)all items, (2)custom intems and 
   //*** (3) categories of items selected  ***//
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("listCell", forIndexPath: indexPath) 
+    let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath as IndexPath) 
     let tripList = chosenTrip.lists[0]
     // Items from main list
     let selectedItems = tripList.items.filter("itemCount > 0")
@@ -139,10 +139,10 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
     //*** Chosen Category Items ***//
     } else {
       // List Name - has a tag of 1
-        let sortedCategories = selectedCategories.sort()
+        let sortedCategories = selectedCategories.sorted()
         let listNameLabel = cell.contentView.viewWithTag(1) as! UILabel
         let currentCategory = sortedCategories[indexPath.row]
-        listNameLabel.text = currentCategory.capitalizedString
+        listNameLabel.text = currentCategory.capitalized
       // Category List
         let listItemNameLabel = cell.contentView.viewWithTag(2) as! UILabel
         let categoryItems = selectedItems.filter("itemCategory = '\(currentCategory)'")
@@ -162,7 +162,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   
   
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showListItems" {
       if let destinationController = segue.destinationViewController as? ListItemsViewController {
         if let listPath = listTable.indexPathForSelectedRow {

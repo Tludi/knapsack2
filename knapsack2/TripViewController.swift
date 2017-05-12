@@ -10,14 +10,14 @@ import UIKit
 import RealmSwift
 import GoogleMobileAds
 
-class TripViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TripViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   var realm = try! Realm()
   var allTrips = try! Realm().objects(Trip.self)
   var presentedTrips = try! Realm().objects(Trip.self).filter("archived = false").sorted(byKeyPath: "startDate")
   var selectedTrip = Trip()
   var showActiveTrips = true
-  let currentDate = NSDate()
+  let currentDate = Date()
   
   @IBOutlet weak var infoButtonOutlet: UIBarButtonItem!
   @IBOutlet weak var bannerView: GADBannerView!
@@ -88,7 +88,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
   // **** Formatting the tableView *****//
   
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
   
@@ -96,7 +96,8 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     return presentedTrips.count
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
     let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath as IndexPath) 
     let trip = presentedTrips[indexPath.row]
     
@@ -119,9 +120,13 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let calendar = NSCalendar.current
     let unit:NSCalendar.Unit = .day
     
-    let convertedCurrentDate = (calendar.startOfDayForDate(currentDate))
-    let startDate = (calendar.startOfDayForDate(dateFormatter.dateFromString(trip.startDate)!))
-    let daysUntilTrip = calendar.components(unit, fromDate: convertedCurrentDate, toDate: startDate, options: [] ).day
+    let convertedCurrentDate = calendar.startOfDay(for: currentDate)
+//    let convertedCurrentDate = (calendar.startOfDayForDate(currentDate))
+    let startDate = (calendar.startOfDay(for: dateFormatter.date(from: trip.startDate)!))
+    
+//    ********** Double check this calculation  *******
+    let daysUntilTrip = startDate.timeIntervalSince(convertedCurrentDate)
+//    let daysUntilTrip = calendar.components(unit, fromDate: convertedCurrentDate, toDate: startDate, options: [] ).day
     
     
     // tripItems Total
@@ -141,32 +146,32 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     return cell
   }
   
-  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
   
-  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
   }
+
   
   
   
   //  Trip table cell actions - Copy, Edit, Delete
-  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
    
-    
-    
-    
-    
     //****************** Copy trip functions
     //************* need to correct code for when there are more than one lists
+    let copyCellAction = UITableViewRowAction(style: .normal, title: "    ") {
+      (UITableViewRowAction, indexPath) -> Void in
+//    let copyCellAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "    "){ (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
     
-    let copyCellAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "    "){ (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
       
       self.selectedTrip = self.presentedTrips[indexPath.row]
       // set new trip
       let copiedTrip = Trip()
 
-      copiedTrip.id = NSUUID().UUIDString
+      copiedTrip.id = NSUUID().uuidString
       copiedTrip.tripName = "\(self.selectedTrip.tripName)Copy"
       copiedTrip.startDate = self.selectedTrip.startDate
       copiedTrip.numberOfDays = self.selectedTrip.numberOfDays
@@ -177,7 +182,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
       
       for originalList in self.selectedTrip.lists {
         let newList = ItemList()
-        newList.id = NSUUID().UUIDString
+        newList.id = NSUUID().uuidString
         newList.listName = originalList.listName
 //        var originalItems = originalList.items
 
@@ -189,7 +194,7 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
       // only copies the first list items
       for eachItem in self.selectedTrip.lists.first!.items {
         let newItem = Item()
-        newItem.id = NSUUID().UUIDString
+        newItem.id = NSUUID().uuidString
         newItem.itemName = eachItem.itemName
         newItem.itemCount = eachItem.itemCount
         newItem.itemCategory = eachItem.itemCategory
@@ -211,9 +216,11 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     // Archive trip functions
-    let archiveCellAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+    let archiveCellAction = UITableViewRowAction(style: .normal, title: "    ") {
+      (UITableViewRowAction, indexPath) -> Void in
+//    let archiveCellAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
       
-      self.editing = false
+      self.isEditing = false
       self.selectedTrip = self.presentedTrips[indexPath.row]
       try! self.realm.write {
         self.selectedTrip.archived = true
@@ -235,7 +242,9 @@ class TripViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     // Delete trip functions
-    let deleteCellAction = UITableViewRowAction(style: .Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+    let deleteCellAction = UITableViewRowAction(style: .normal, title: "    ") {
+      (UITableViewRowAction, indexPath) -> Void in
+//    let deleteCellAction = UITableViewRowAction(style: .Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
       print("delete action")
       let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .Alert)
       deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction) in

@@ -11,7 +11,7 @@
 		008AFA521EC511760088345F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA511EC511760088345F /* ViewController.swift */; };
 		008AFA551EC511760088345F /* OldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA531EC511760088345F /* OldMain.storyboard */; };
 		008AFA571EC511760088345F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA561EC511760088345F /* Assets.xcassets */; };
-		008AFA5A1EC511760088345F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA581EC511760088345F /* LaunchScreen.storyboard */; };
+		008AFA5A1EC511760088345F /* OldLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA581EC511760088345F /* OldLaunchScreen.storyboard */; };
 		008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA641EC511760088345F /* knapsack2Tests.swift */; };
 		008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA6F1EC511760088345F /* knapsack2UITests.swift */; };
 		008AFA7E1EC511A40088345F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA7D1EC511A40088345F /* Podfile */; };
@@ -50,6 +50,36 @@
 		008AFAB21EC527FA0088345F /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAB11EC527FA0088345F /* NewTripViewController.swift */; };
 		008AFAB31EC527FA0088345F /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAB11EC527FA0088345F /* NewTripViewController.swift */; };
 		008AFAB41EC527FA0088345F /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFAB11EC527FA0088345F /* NewTripViewController.swift */; };
+		00CF0CD51EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CD41EC62EF700AAF0BD /* UIViewExtensions.swift */; };
+		00CF0CD61EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CD41EC62EF700AAF0BD /* UIViewExtensions.swift */; };
+		00CF0CD71EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CD41EC62EF700AAF0BD /* UIViewExtensions.swift */; };
+		00CF0CD91EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CD81EC62F0F00AAF0BD /* ListItemsViewController.swift */; };
+		00CF0CDA1EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CD81EC62F0F00AAF0BD /* ListItemsViewController.swift */; };
+		00CF0CDB1EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CD81EC62F0F00AAF0BD /* ListItemsViewController.swift */; };
+		00CF0CDD1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CDC1EC62F1A00AAF0BD /* CategoriesViewController.swift */; };
+		00CF0CDE1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CDC1EC62F1A00AAF0BD /* CategoriesViewController.swift */; };
+		00CF0CDF1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CDC1EC62F1A00AAF0BD /* CategoriesViewController.swift */; };
+		00CF0CE11EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */; };
+		00CF0CE21EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */; };
+		00CF0CE31EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */; };
+		00CF0CE51EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */; };
+		00CF0CE61EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */; };
+		00CF0CE71EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */; };
+		00CF0CE91EC62F4200AAF0BD /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */; };
+		00CF0CEA1EC62F4200AAF0BD /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */; };
+		00CF0CEB1EC62F4200AAF0BD /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */; };
+		00CF0CED1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */; };
+		00CF0CEE1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */; };
+		00CF0CEF1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */; };
+		00CF0CF11EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */; };
+		00CF0CF21EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */; };
+		00CF0CF31EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */; };
+		00CF0CF51EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */; };
+		00CF0CF61EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */; };
+		00CF0CF71EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */; };
+		00CF0CF91EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */; };
+		00CF0CFA1EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */; };
+		00CF0CFB1EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */; };
 		5A8C7020154476A0140010E2 /* Pods_knapsack2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A39B9032EEC59F91D9E790 /* Pods_knapsack2Tests.framework */; };
 		E6572C7AE6F5531E6C770CCE /* Pods_knapsack2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +107,7 @@
 		008AFA511EC511760088345F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		008AFA541EC511760088345F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OldMain.storyboard; sourceTree = "<group>"; };
 		008AFA561EC511760088345F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		008AFA591EC511760088345F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		008AFA591EC511760088345F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OldLaunchScreen.storyboard; sourceTree = "<group>"; };
 		008AFA5B1EC511760088345F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008AFA601EC511760088345F /* knapsack2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = knapsack2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		008AFA641EC511760088345F /* knapsack2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knapsack2Tests.swift; sourceTree = "<group>"; };
@@ -104,6 +134,16 @@
 		008AFAA91EC525090088345F /* MasterItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterItemList.swift; sourceTree = "<group>"; };
 		008AFAAD1EC527ED0088345F /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
 		008AFAB11EC527FA0088345F /* NewTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
+		00CF0CD41EC62EF700AAF0BD /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		00CF0CD81EC62F0F00AAF0BD /* ListItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemsViewController.swift; sourceTree = "<group>"; };
+		00CF0CDC1EC62F1A00AAF0BD /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemViewController.swift; sourceTree = "<group>"; };
+		00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
+		00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPageViewController.swift; sourceTree = "<group>"; };
+		00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		22C84A99B9CD129F7809FB60 /* Pods-knapsack2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2/Pods-knapsack2.debug.xcconfig"; sourceTree = "<group>"; };
 		5882B79A74C4505105D79282 /* Pods-knapsack2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_knapsack2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,13 +205,22 @@
 			isa = PBXGroup;
 			children = (
 				008AFA821EC5236C0088345F /* Main.storyboard */,
-				008AFA9D1EC524930088345F /* TripViewController.swift */,
+				00CF0CF01EC62F5E00AAF0BD /* InformationPageViewController.swift */,
 				008AFAAD1EC527ED0088345F /* TripListViewController.swift */,
 				008AFAB11EC527FA0088345F /* NewTripViewController.swift */,
+				008AFA9D1EC524930088345F /* TripViewController.swift */,
+				00CF0CD41EC62EF700AAF0BD /* UIViewExtensions.swift */,
+				00CF0CD81EC62F0F00AAF0BD /* ListItemsViewController.swift */,
+				00CF0CDC1EC62F1A00AAF0BD /* CategoriesViewController.swift */,
+				00CF0CE01EC62F2700AAF0BD /* CategoryListViewController.swift */,
+				00CF0CE41EC62F3300AAF0BD /* CustomItemViewController.swift */,
+				00CF0CE81EC62F4200AAF0BD /* NewListViewController.swift */,
+				00CF0CEC1EC62F4D00AAF0BD /* MenuTableViewController.swift */,
 				008AFA511EC511760088345F /* ViewController.swift */,
 				008AFAA11EC524F20088345F /* MasterItems.swift */,
 				008AFAA51EC524F90088345F /* Trip.swift */,
 				008AFAA91EC525090088345F /* MasterItemList.swift */,
+				00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */,
 				008AFA811EC521E90088345F /* Support Files */,
 			);
 			path = knapsack2;
@@ -211,7 +260,8 @@
 				008AFA5B1EC511760088345F /* Info.plist */,
 				008AFA4F1EC511760088345F /* AppDelegate.swift */,
 				008AFA7D1EC511A40088345F /* Podfile */,
-				008AFA581EC511760088345F /* LaunchScreen.storyboard */,
+				00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */,
+				008AFA581EC511760088345F /* OldLaunchScreen.storyboard */,
 				008AFA861EC5242B0088345F /* knapsack2-Bridging-Header.h */,
 				008AFA871EC5242B0088345F /* knapsack2Tests-Bridging-Header.h */,
 				008AFA881EC5242B0088345F /* knapsack2UITests-Bridging-Header.h */,
@@ -358,10 +408,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008AFA5A1EC511760088345F /* LaunchScreen.storyboard in Resources */,
+				008AFA5A1EC511760088345F /* OldLaunchScreen.storyboard in Resources */,
 				008AFA831EC5236C0088345F /* Main.storyboard in Resources */,
 				008AFA571EC511760088345F /* Assets.xcassets in Resources */,
 				008AFA7E1EC511A40088345F /* Podfile in Resources */,
+				00CF0CF91EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */,
 				008AFA551EC511760088345F /* OldMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA7F1EC511A40088345F /* Podfile in Resources */,
+				00CF0CFA1EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */,
 				008AFA841EC5236C0088345F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA801EC511A40088345F /* Podfile in Resources */,
+				00CF0CFB1EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */,
 				008AFA851EC5236C0088345F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,16 +539,25 @@
 			files = (
 				008AFA521EC511760088345F /* ViewController.swift in Sources */,
 				008AFA9A1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				00CF0CE51EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
+				00CF0CED1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */,
+				00CF0CF11EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
+				00CF0CE91EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
 				008AFAB21EC527FA0088345F /* NewTripViewController.swift in Sources */,
+				00CF0CD51EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
 				008AFAAA1EC525090088345F /* MasterItemList.swift in Sources */,
 				008AFAA21EC524F20088345F /* MasterItems.swift in Sources */,
 				008AFAAE1EC527ED0088345F /* TripListViewController.swift in Sources */,
 				008AFAA61EC524FA0088345F /* Trip.swift in Sources */,
+				00CF0CE11EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
+				00CF0CF51EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				008AFA9E1EC524930088345F /* TripViewController.swift in Sources */,
 				008AFA971EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
 				008AFA941EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				00CF0CD91EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
 				008AFA911EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFA501EC511760088345F /* AppDelegate.swift in Sources */,
+				00CF0CDD1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,15 +566,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA951EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				00CF0CEA1EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
 				008AFA981EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
+				00CF0CF61EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
+				00CF0CE61EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				008AFAAB1EC525090088345F /* MasterItemList.swift in Sources */,
+				00CF0CDA1EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
 				008AFAAF1EC527ED0088345F /* TripListViewController.swift in Sources */,
+				00CF0CE21EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				008AFAB31EC527FA0088345F /* NewTripViewController.swift in Sources */,
 				008AFA921EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFA9F1EC524930088345F /* TripViewController.swift in Sources */,
 				008AFAA71EC524FA0088345F /* Trip.swift in Sources */,
 				008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */,
 				008AFA9B1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				00CF0CF21EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
+				00CF0CEE1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */,
+				00CF0CD61EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
+				00CF0CDE1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 				008AFAA31EC524F20088345F /* MasterItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,15 +593,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA961EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
+				00CF0CEB1EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
 				008AFA991EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
+				00CF0CF71EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
+				00CF0CE71EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				008AFAAC1EC525090088345F /* MasterItemList.swift in Sources */,
+				00CF0CDB1EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
 				008AFAB01EC527ED0088345F /* TripListViewController.swift in Sources */,
+				00CF0CE31EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				008AFAB41EC527FA0088345F /* NewTripViewController.swift in Sources */,
 				008AFA931EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFAA01EC524930088345F /* TripViewController.swift in Sources */,
 				008AFAA81EC524FA0088345F /* Trip.swift in Sources */,
 				008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */,
 				008AFA9C1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				00CF0CF31EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
+				00CF0CEF1EC62F4D00AAF0BD /* MenuTableViewController.swift in Sources */,
+				00CF0CD71EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
+				00CF0CDF1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 				008AFAA41EC524F20088345F /* MasterItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,12 +639,12 @@
 			name = OldMain.storyboard;
 			sourceTree = "<group>";
 		};
-		008AFA581EC511760088345F /* LaunchScreen.storyboard */ = {
+		008AFA581EC511760088345F /* OldLaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				008AFA591EC511760088345F /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = OldLaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
