@@ -118,7 +118,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = DateFormatter.Style.medium
     let calendar = NSCalendar.current
-    let unit:NSCalendar.Unit = .day
+    let _:NSCalendar.Unit = .day
     
     let convertedCurrentDate = calendar.startOfDay(for: currentDate)
 //    let convertedCurrentDate = (calendar.startOfDayForDate(currentDate))
@@ -231,11 +231,11 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     archiveCellAction.backgroundColor = UIColor(patternImage: archiveimage)
     
     // Edit trip functions
-    let editCellAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+    let editCellAction = UITableViewRowAction(style: .normal, title: "    ") { (UITableViewRowAction, indexPath) -> Void in
       
-      self.editing = false
+      self.isEditing = false
       self.selectedTrip = self.presentedTrips[indexPath.row]
-      self.performSegueWithIdentifier("editTripData", sender: self)
+      self.performSegue(withIdentifier: "editTripData", sender: self)
     }
     let editimage = UIImage(named: "editbox.png")!
     editCellAction.backgroundColor = UIColor(patternImage: editimage)
@@ -246,22 +246,22 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
       (UITableViewRowAction, indexPath) -> Void in
 //    let deleteCellAction = UITableViewRowAction(style: .Normal, title: "    ") { (action:UITableViewRowAction, indexPath:NSIndexPath) -> Void in
       print("delete action")
-      let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .Alert)
-      deleteAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction) in
+      let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Selected Trip Will be DELETED!", preferredStyle: .alert)
+      deleteAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction) in
         try! self.realm.write {
           let selectedTrip = self.presentedTrips[indexPath.row]
           self.realm.delete(selectedTrip)
           if self.presentedTrips.count == 0 {
-            self.addTripBox.hidden = false
+            self.addTripBox.isHidden = false
           }
         }
         
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
       }))
-      deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction) in
+      deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction) in
         return
       }))
-      self.presentViewController(deleteAlert, animated: true, completion: nil)
+      self.present(deleteAlert, animated: true, completion: nil)
     }
     
     let deleteImage = UIImage(named: "deleteBoxLG.png")!
@@ -278,7 +278,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showTripLists" {
-      if let destinationController = segue.destinationViewController as? TripListViewController {
+      if let destinationController = segue.destination as? TripListViewController {
         if let tripIndex = itemTable.indexPathForSelectedRow {
           let chosenTrip = presentedTrips[tripIndex.row]
           destinationController.chosenTrip = chosenTrip
@@ -287,7 +287,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     if segue.identifier == "editTripData" {
-      if let destinationController = segue.destinationViewController as? NewTripViewController {
+      if let destinationController = segue.destination as? NewTripViewController {
           print("clicked edit trip")
           destinationController.editedTrip = selectedTrip
           destinationController.editToggle = true

@@ -25,7 +25,9 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = passedCategory.capitalizedString
+    
+    self.title = passedCategory.capitalized
+    
     tripLengthLabel.text = "Packing for \(passedTrip.numberOfDays) days"
   }
   
@@ -34,8 +36,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     return 1
   }
   
-  
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     let categoryItemList = passedList.items.filter("itemCategory = '\(passedCategory)'")
     return categoryItemList.count
   }
@@ -43,13 +44,13 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
   
   
   // show cell
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCellWithIdentifier("categoryItemCell", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "categoryItemCell", for: indexPath)
     
     // get current saved items from the passed list
     let categoryItemList = passedList.items.filter("itemCategory = '\(passedCategory)'")
-    let sortedCategoryItemList = categoryItemList.sorted("itemName")
+    let sortedCategoryItemList = categoryItemList.sorted(byKeyPath: "itemName")
     let item = sortedCategoryItemList[indexPath.row]
     
     // set cell labels
@@ -72,8 +73,8 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     // #selector was updated from swift 2
-    increaseButton.addTarget(self, action: #selector(CategoryListViewController.changeItemCount(_:)), forControlEvents: .TouchUpInside)
-    decreaseButton.addTarget(self, action: #selector(CategoryListViewController.changeItemCount(_:)), forControlEvents: .TouchUpInside)
+    increaseButton.addTarget(self, action: #selector(changeItemCount(sender:)), for: .touchUpInside)
+    decreaseButton.addTarget(self, action: #selector(changeItemCount(sender:)), for: .touchUpInside)
     
     return cell
   }
@@ -94,7 +95,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
     
     // if plus(+) button is selected
     if sender.tag == 10 {
-      if currentCount < 1 {
+      if currentCount! < 1 {
         decreaseButton.fadeIn()
         decreaseBackground.fadeIn()
       }

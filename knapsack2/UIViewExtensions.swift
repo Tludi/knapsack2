@@ -30,7 +30,7 @@ extension UIView {
         (finished: Bool) -> Void in
 
         
-        UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
         self.alpha = 1.0
           }, completion: nil)
     })

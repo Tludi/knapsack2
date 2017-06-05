@@ -39,22 +39,22 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     if chosenCategory == "All Items" {
       filterCat = "itemCount > 0"
     } else {
-      filterCat = "itemCount > 0 AND itemCategory == '\(chosenCategory.lowercaseString)'"
+      filterCat = "itemCount > 0 AND itemCategory == '\(chosenCategory.lowercased())'"
     }
   }
   
   
-  override func viewWillAppear(animated: Bool) {
+  func viewWillAppear() {
     listName.text = chosenCategory
     
     // show/hide addItemBox based on if there are any items in the list
     addItemBox.layer.cornerRadius = 20
     if chosenList.items.filter("itemCount > 0").count > 0 {
-      addItemBox.hidden = true
+      addItemBox.isHidden = true
     } else if customList.items.filter("itemCount > 0").count > 0 {
-      addItemBox.hidden = true
+      addItemBox.isHidden = true
     } else {
-      addItemBox.hidden = false
+      addItemBox.isHidden = false
     }
     listItemTable.reloadData()
   }
@@ -65,7 +65,7 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   }
   
   //*** Number of rows based on selected items with a count ***//
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if chosenList.listName == "All Items" {
       if section == 0 {
 //        print("section 0 has \(customList.items.filter(filterCat).count)")
@@ -91,7 +91,7 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   
   //*** show cells based on All Items or individual category selected from segue
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var itemsWithCount = chosenList.items.filter(filterCat)
     
     if indexPath.section == 0 {
@@ -103,8 +103,7 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     let item = itemsWithCount[indexPath.row]
-    let cell = tableView.dequeueReusableCellWithIdentifier("itemCell", forIndexPath: indexPath)
-    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
     
     // List Name
     let listNameLabel = cell.contentView.viewWithTag(1) as! UILabel
@@ -120,7 +119,7 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     listNameLabel.text = item.itemName
-    categoryNameLabel.text = item.itemCategory.capitalizedString
+    categoryNameLabel.text = item.itemCategory.capitalized
     itemCountLabel.text = "\(item.itemCount)"
     
     if indexPath.section == 0 {
@@ -132,10 +131,10 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     // set checked image based on being packed
     if itemsWithCount[indexPath.row].packed == true {
       checkBox.image = checkedButtonImage
-      itemOverlay?.hidden = false
+      itemOverlay?.isHidden = false
     } else {
       checkBox.image = uncheckedButtonImage
-      itemOverlay?.hidden = true
+      itemOverlay?.isHidden = true
     }
 
     return cell
@@ -144,9 +143,8 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   
   
-  
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let cell = tableView.cellForRowAtIndexPath(indexPath)
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = tableView.cellForRow(at: indexPath)
     var itemsWithCount = chosenList.items.filter(filterCat)
     if indexPath.section == 0 {
       itemsWithCount = customList.items.filter(filterCat)
@@ -156,8 +154,8 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     let item = itemsWithCount[indexPath.row]
     
     let checkBox:UIImageView = cell?.contentView.viewWithTag(11) as! UIImageView
-    if checkBox.hidden == false {
-      toggleCheckButton(item)
+    if checkBox.isHidden == false {
+      toggleCheckButton(selectedItem: item)
     }
   }
   
@@ -206,15 +204,14 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
 //  }
   
   
-  
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showAddItem" {
-      if let destinationController = segue.destinationViewController as? CategoriesViewController {
+      if let destinationController = segue.destination as? CategoriesViewController {
         destinationController.passedList = chosenList
         destinationController.passedTrip = passedTrip
       }
     } else if segue.identifier == "addItemBox" {
-      if let destinationController = segue.destinationViewController as? CategoriesViewController {
+      if let destinationController = segue.destination as? CategoriesViewController {
         destinationController.passedList = chosenList
         destinationController.passedTrip = passedTrip
       }

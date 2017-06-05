@@ -167,7 +167,8 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
     if segue.identifier == "showListItems" {
       if let destinationController = segue.destination as? ListItemsViewController {
         if let listPath = listTable.indexPathForSelectedRow {
-          let cell = tableView(listTable, cellForRowAtIndexPath: listPath)
+          let cell = tableView(listTable, cellForRowAt: listPath)
+//          let cell = tableView(listTable, cellForRowAtIndexPath: listPath)
           let category = cell.contentView.viewWithTag(1) as! UILabel
           
           // Current Trip first list - master List "All Items"
