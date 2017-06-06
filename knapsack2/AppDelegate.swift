@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  let masterList = try! Realm().objects(ItemList.self).filter("id = '1'")
+  let customListFromAppDelegate = try! Realm().objects(ItemList.self).filter("id = '2'")
+  
+ 
+  
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    UITableViewCell.appearance().backgroundColor = .clear
+    
+    checkIfMasterListExists()
+    
     return true
   }
 
@@ -39,6 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  }
+  
+  func checkIfMasterListExists() {
+    if masterList.count == 0 {
+      print("Master list is being created")
+    } else {
+      print("Master list exists")
+    }
   }
 
 
