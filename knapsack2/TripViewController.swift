@@ -12,19 +12,41 @@ import GoogleMobileAds
 
 class TripViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-  let allLists = try! Realm().objects(ItemList.self)
-  let masterList = try! Realm().objects(ItemList.self).filter("id = '1'")
+  
+  let realm = try! Realm()
+  var allTrips = try! Realm().objects(Trip.self)
+  var activeTrips = try! Realm().objects(Trip.self).filter("archived = false").sorted(byKeyPath: "startDate")
+  var selectedTrip = Trip()
+  var showActiveTrips = true
+  let currentDate = Date()
+  
   
   @IBOutlet weak var tripTable: UITableView!
   @IBAction func clearDB(_ sender: UIBarButtonItem) {
     deleteMasterList()
   }
   
+  @IBAction func toggleTripType(_ sender: UIBarButtonItem) {
+    if showActiveTrips == true {
+      showActiveTrips = false
+      activeTrips = try! Realm().objects(Trip.self).filter("archived = true")
+      self.title = "Archives"
+    } else {
+      showActiveTrips = true
+      activeTrips = try! Realm().objects(Trip.self).filter("archived = false")
+      self.title = "Active Trips"
+    }
+    tripTable.reloadData()
+  }
+  
+  
   func deleteMasterList() {
-    let realm = try! Realm()
+//    let realm = try! Realm()
+    // Fot testing
+    let masterList = realm.objects(ItemList.self).filter("id = '1'")
     if masterList.count >= 1 {
       try! realm.write {
-        realm.delete(self.masterList)
+        realm.deleteAll()
       }
       print("Deleted Master List")
     } else {

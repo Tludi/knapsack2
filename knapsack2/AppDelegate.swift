@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   let masterList = try! Realm().objects(ItemList.self).filter("id = '1'")
-  let customListFromAppDelegate = try! Realm().objects(ItemList.self).filter("id = '2'")
+//  let customListFromAppDelegate = try! Realm().objects(ItemList.self).filter("id = '2'")
   
  
   
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
-    UITableViewCell.appearance().backgroundColor = .clear
+    UITableViewCell.appearance().backgroundColor = UIColor.clear
     
     checkIfMasterListExists()
     
@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func checkIfMasterListExists() {
     if masterList.count == 0 {
       print("Master list is being created")
+      DataManager.populateRealm()
     } else {
       print("Master list exists")
     }
