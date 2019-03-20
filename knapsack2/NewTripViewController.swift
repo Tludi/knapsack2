@@ -26,7 +26,7 @@ class NewTripViewController: UIViewController {
   @IBAction func dateTextFieldEditing(sender: UITextField) {
     // configure the date picker
     let datePickerView:UIDatePicker = UIDatePicker()
-    datePickerView.datePickerMode = UIDatePickerMode.date
+    datePickerView.datePickerMode = UIDatePicker.Mode.date
     sender.inputView = datePickerView
     
     datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
@@ -172,7 +172,7 @@ class NewTripViewController: UIViewController {
   }
 
   
-  func datePickerValueChanged(sender:UIDatePicker) {
+  @objc func datePickerValueChanged(sender:UIDatePicker) {
     let dateFormatter = DateFormatter()
     
     dateFormatter.dateStyle = DateFormatter.Style.medium

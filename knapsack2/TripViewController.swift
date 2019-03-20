@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
+//import GoogleMobileAds
 
 class TripViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -20,7 +20,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
   let currentDate = Date()
   
   @IBOutlet weak var infoButtonOutlet: UIBarButtonItem!
-  @IBOutlet weak var bannerView: GADBannerView!
+//  @IBOutlet weak var bannerView: GADBannerView!
 
   @IBOutlet weak var addTripBox: UIView!
   
@@ -61,14 +61,14 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     itemTable.backgroundView = UIImageView(image: bgImage)
     
     // AdMob code
-    print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+//    print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
     // This is a test ID, use for testing
 //    bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
     // This is the app unit ID for Admob - knapsack banner ad - front page
-    bannerView.adUnitID = "ca-app-pub-9078081310752371/9311362449"
+//    bannerView.adUnitID = "ca-app-pub-9078081310752371/9311362449"
     print("remember to reset adUnitID to production if using testing ID")
-    bannerView.rootViewController = self
-    bannerView.load(GADRequest())
+//    bannerView.rootViewController = self
+//    bannerView.load(GADRequest())
 
     
   }
@@ -150,7 +150,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     return true
   }
   
-  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
   }
 
   

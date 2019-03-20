@@ -11,13 +11,13 @@ import RealmSwift
 
 
 class Trip: Object {
-  dynamic var id = ""
-  dynamic var tripName = "defaulttripname"
-  dynamic var startDate = "date"
-  dynamic var numberOfDays = "five"
-  dynamic var endDate = NSDate()
-  dynamic var tripImage = "imagePath"
-  dynamic var archived = false
+  @objc dynamic var id = ""
+  @objc dynamic var tripName = "defaulttripname"
+  @objc dynamic var startDate = "date"
+  @objc dynamic var numberOfDays = "five"
+  @objc dynamic var endDate = NSDate()
+  @objc dynamic var tripImage = "imagePath"
+  @objc dynamic var archived = false
   
   override static func primaryKey() -> String? {
     return "id"
@@ -28,9 +28,9 @@ class Trip: Object {
 
 
 class ItemList: Object {
-  dynamic var id = ""
-  dynamic var listName = "name"
-  dynamic var listImage = "listTemp.png"
+  @objc dynamic var id = ""
+  @objc dynamic var listName = "name"
+  @objc dynamic var listImage = "listTemp.png"
   
   override static func primaryKey() -> String? {
     return "id"
@@ -43,12 +43,12 @@ class ItemList: Object {
 
 
 class Item: Object {
-  dynamic var id = ""
-  dynamic var itemName = "name"
-  dynamic var itemCategory = "category"
-  dynamic var itemCount: Int = 0
-  dynamic var itemImage = "imagePath"
-  dynamic var packed: Bool = false
+  @objc dynamic var id = ""
+  @objc dynamic var itemName = "name"
+  @objc dynamic var itemCategory = "category"
+  @objc dynamic var itemCount: Int = 0
+  @objc dynamic var itemImage = "imagePath"
+  @objc dynamic var packed: Bool = false
   
   override static func primaryKey() -> String? {
     return "id"

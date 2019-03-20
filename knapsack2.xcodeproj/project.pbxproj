@@ -20,18 +20,6 @@
 		008AFA831EC5236C0088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA821EC5236C0088345F /* Main.storyboard */; };
 		008AFA841EC5236C0088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA821EC5236C0088345F /* Main.storyboard */; };
 		008AFA851EC5236C0088345F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA821EC5236C0088345F /* Main.storyboard */; };
-		008AFA911EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */; };
-		008AFA921EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */; };
-		008AFA931EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */; };
-		008AFA941EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */; };
-		008AFA951EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */; };
-		008AFA961EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */; };
-		008AFA971EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */; };
-		008AFA981EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */; };
-		008AFA991EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */; };
-		008AFA9A1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		008AFA9B1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		008AFA9C1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		008AFA9E1EC524930088345F /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA9D1EC524930088345F /* TripViewController.swift */; };
 		008AFA9F1EC524930088345F /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA9D1EC524930088345F /* TripViewController.swift */; };
 		008AFAA01EC524930088345F /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA9D1EC524930088345F /* TripViewController.swift */; };
@@ -77,7 +65,8 @@
 		00CF0CF91EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */; };
 		00CF0CFA1EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */; };
 		00CF0CFB1EC62FBF00AAF0BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */; };
-		5A8C7020154476A0140010E2 /* Pods_knapsack2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A39B9032EEC59F91D9E790 /* Pods_knapsack2Tests.framework */; };
+		3A5F125E9D685F3DA8206C44 /* Pods_knapsack2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A39B9032EEC59F91D9E790 /* Pods_knapsack2Tests.framework */; };
+		84535CBB78F236E7CC507C4A /* Pods_knapsack2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8828C1525B4EA029202E6C12 /* Pods_knapsack2UITests.framework */; };
 		E6572C7AE6F5531E6C770CCE /* Pods_knapsack2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,14 +106,6 @@
 		008AFA861EC5242B0088345F /* knapsack2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knapsack2-Bridging-Header.h"; sourceTree = "<group>"; };
 		008AFA871EC5242B0088345F /* knapsack2Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knapsack2Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		008AFA881EC5242B0088345F /* knapsack2UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "knapsack2UITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		008AFA891EC5242C0088345F /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		008AFA8B1EC5242C0088345F /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		008AFA8D1EC5242C0088345F /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
-		008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		008AFA8F1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		008AFA9D1EC524930088345F /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		008AFAA11EC524F20088345F /* MasterItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterItems.swift; sourceTree = "<group>"; };
 		008AFAA51EC524F90088345F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -141,9 +122,12 @@
 		00CF0CF41EC62F8900AAF0BD /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		00CF0CF81EC62FBF00AAF0BD /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		22C84A99B9CD129F7809FB60 /* Pods-knapsack2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2/Pods-knapsack2.debug.xcconfig"; sourceTree = "<group>"; };
-		5882B79A74C4505105D79282 /* Pods-knapsack2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		33610EC59F364989538EBE11 /* Pods-knapsack2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2UITests/Pods-knapsack2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		36D8CF9F56051B877E52A3A4 /* Pods-knapsack2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2UITests/Pods-knapsack2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4138B6B3D0AFC19797433797 /* Pods-knapsack2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_knapsack2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9913F114F8EAF75CCFE5CF3F /* Pods-knapsack2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8828C1525B4EA029202E6C12 /* Pods_knapsack2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_knapsack2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7A62650005DBDEBB1F28AE /* Pods-knapsack2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A2F59DC21266F2015067BC67 /* Pods-knapsack2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knapsack2.release.xcconfig"; path = "Pods/Target Support Files/Pods-knapsack2/Pods-knapsack2.release.xcconfig"; sourceTree = "<group>"; };
 		E7A39B9032EEC59F91D9E790 /* Pods_knapsack2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_knapsack2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8C7020154476A0140010E2 /* Pods_knapsack2Tests.framework in Frameworks */,
+				3A5F125E9D685F3DA8206C44 /* Pods_knapsack2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84535CBB78F236E7CC507C4A /* Pods_knapsack2UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,14 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				008AFA561EC511760088345F /* Assets.xcassets */,
-				008AFA891EC5242C0088345F /* TPKeyboardAvoidingCollectionView.h */,
-				008AFA8A1EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m */,
-				008AFA8B1EC5242C0088345F /* TPKeyboardAvoidingScrollView.h */,
-				008AFA8C1EC5242C0088345F /* TPKeyboardAvoidingScrollView.m */,
-				008AFA8D1EC5242C0088345F /* TPKeyboardAvoidingTableView.h */,
-				008AFA8E1EC5242C0088345F /* TPKeyboardAvoidingTableView.m */,
-				008AFA8F1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				008AFA901EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				008AFA531EC511760088345F /* OldMain.storyboard */,
 				008AFA5B1EC511760088345F /* Info.plist */,
 				008AFA4F1EC511760088345F /* AppDelegate.swift */,
@@ -269,8 +246,10 @@
 			children = (
 				22C84A99B9CD129F7809FB60 /* Pods-knapsack2.debug.xcconfig */,
 				A2F59DC21266F2015067BC67 /* Pods-knapsack2.release.xcconfig */,
-				9913F114F8EAF75CCFE5CF3F /* Pods-knapsack2Tests.debug.xcconfig */,
-				5882B79A74C4505105D79282 /* Pods-knapsack2Tests.release.xcconfig */,
+				4138B6B3D0AFC19797433797 /* Pods-knapsack2Tests.debug.xcconfig */,
+				9D7A62650005DBDEBB1F28AE /* Pods-knapsack2Tests.release.xcconfig */,
+				36D8CF9F56051B877E52A3A4 /* Pods-knapsack2UITests.debug.xcconfig */,
+				33610EC59F364989538EBE11 /* Pods-knapsack2UITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -280,6 +259,7 @@
 			children = (
 				6AEB79C7A983566C98A61E85 /* Pods_knapsack2.framework */,
 				E7A39B9032EEC59F91D9E790 /* Pods_knapsack2Tests.framework */,
+				8828C1525B4EA029202E6C12 /* Pods_knapsack2UITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,7 +276,6 @@
 				008AFA491EC511760088345F /* Frameworks */,
 				008AFA4A1EC511760088345F /* Resources */,
 				36C4A6FF1467FFBBBF71D532 /* [CP] Embed Pods Frameworks */,
-				4368AE1C44F35A32AFBA161F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,12 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 008AFA771EC511760088345F /* Build configuration list for PBXNativeTarget "knapsack2Tests" */;
 			buildPhases = (
-				786CB426C52EF64131E5394E /* [CP] Check Pods Manifest.lock */,
+				E6A5DF56A75E2B358C35CB45 /* [CP] Check Pods Manifest.lock */,
 				008AFA5C1EC511760088345F /* Sources */,
 				008AFA5D1EC511760088345F /* Frameworks */,
 				008AFA5E1EC511760088345F /* Resources */,
-				561B183579FE9777D26EEB5F /* [CP] Embed Pods Frameworks */,
-				8489EDD4FE24B4AD2B2A01C3 /* [CP] Copy Pods Resources */,
+				4B4B16535E69DFFD87805120 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 008AFA7A1EC511760088345F /* Build configuration list for PBXNativeTarget "knapsack2UITests" */;
 			buildPhases = (
+				B057FD5AB658C8CECEBE86A6 /* [CP] Check Pods Manifest.lock */,
 				008AFA671EC511760088345F /* Sources */,
 				008AFA681EC511760088345F /* Frameworks */,
 				008AFA691EC511760088345F /* Resources */,
+				A8B3988C241850094A033382 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,26 +333,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = diligentagility;
 				TargetAttributes = {
 					008AFA4B1EC511760088345F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LWH67H9CS7;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					008AFA5F1EC511760088345F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LWH67H9CS7;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 008AFA4B1EC511760088345F;
 					};
 					008AFA6A1EC511760088345F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LWH67H9CS7;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 008AFA4B1EC511760088345F;
 					};
@@ -441,28 +421,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-knapsack2/Pods-knapsack2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-knapsack2/Pods-knapsack2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4368AE1C44F35A32AFBA161F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-knapsack2/Pods-knapsack2-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-knapsack2/Pods-knapsack2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		47213072094AFF2A09A994F8 /* [CP] Check Pods Manifest.lock */ = {
@@ -471,58 +441,108 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-knapsack2-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		561B183579FE9777D26EEB5F /* [CP] Embed Pods Frameworks */ = {
+		4B4B16535E69DFFD87805120 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		786CB426C52EF64131E5394E /* [CP] Check Pods Manifest.lock */ = {
+		A8B3988C241850094A033382 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-knapsack2UITests/Pods-knapsack2UITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-knapsack2UITests/Pods-knapsack2UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B057FD5AB658C8CECEBE86A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-knapsack2UITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8489EDD4FE24B4AD2B2A01C3 /* [CP] Copy Pods Resources */ = {
+		E6A5DF56A75E2B358C35CB45 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-knapsack2Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-knapsack2Tests/Pods-knapsack2Tests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -533,7 +553,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				008AFA521EC511760088345F /* ViewController.swift in Sources */,
-				008AFA9A1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CE51EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				00CF0CF11EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CE91EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
@@ -546,10 +565,7 @@
 				00CF0CE11EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				00CF0CF51EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				008AFA9E1EC524930088345F /* TripViewController.swift in Sources */,
-				008AFA971EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
-				008AFA941EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
 				00CF0CD91EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
-				008AFA911EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFA501EC511760088345F /* AppDelegate.swift in Sources */,
 				00CF0CDD1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 			);
@@ -559,9 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008AFA951EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
 				00CF0CEA1EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
-				008AFA981EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
 				00CF0CF61EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				00CF0CE61EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				008AFAAB1EC525090088345F /* MasterItemList.swift in Sources */,
@@ -569,11 +583,9 @@
 				008AFAAF1EC527ED0088345F /* TripListViewController.swift in Sources */,
 				00CF0CE21EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				008AFAB31EC527FA0088345F /* NewTripViewController.swift in Sources */,
-				008AFA921EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFA9F1EC524930088345F /* TripViewController.swift in Sources */,
 				008AFAA71EC524FA0088345F /* Trip.swift in Sources */,
 				008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */,
-				008AFA9B1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CF21EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CD61EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
 				00CF0CDE1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
@@ -585,9 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008AFA961EC5242C0088345F /* TPKeyboardAvoidingScrollView.m in Sources */,
 				00CF0CEB1EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
-				008AFA991EC5242C0088345F /* TPKeyboardAvoidingTableView.m in Sources */,
 				00CF0CF71EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				00CF0CE71EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				008AFAAC1EC525090088345F /* MasterItemList.swift in Sources */,
@@ -595,11 +605,9 @@
 				008AFAB01EC527ED0088345F /* TripListViewController.swift in Sources */,
 				00CF0CE31EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				008AFAB41EC527FA0088345F /* NewTripViewController.swift in Sources */,
-				008AFA931EC5242C0088345F /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFAA01EC524930088345F /* TripViewController.swift in Sources */,
 				008AFAA81EC524FA0088345F /* Trip.swift in Sources */,
 				008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */,
-				008AFA9C1EC5242C0088345F /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CF31EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CD71EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
 				00CF0CDF1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
@@ -652,15 +660,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -669,6 +685,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -686,6 +703,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -703,15 +721,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -720,6 +746,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -730,6 +757,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -745,12 +773,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -762,80 +792,92 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		008AFA781EC511760088345F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9913F114F8EAF75CCFE5CF3F /* Pods-knapsack2Tests.debug.xcconfig */;
+			baseConfigurationReference = 4138B6B3D0AFC19797433797 /* Pods-knapsack2Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/knapsack2.app/knapsack2";
 			};
 			name = Debug;
 		};
 		008AFA791EC511760088345F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5882B79A74C4505105D79282 /* Pods-knapsack2Tests.release.xcconfig */;
+			baseConfigurationReference = 9D7A62650005DBDEBB1F28AE /* Pods-knapsack2Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2Tests-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/knapsack2.app/knapsack2";
 			};
 			name = Release;
 		};
 		008AFA7B1EC511760088345F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36D8CF9F56051B877E52A3A4 /* Pods-knapsack2UITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2UITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = knapsack2;
 			};
 			name = Debug;
 		};
 		008AFA7C1EC511760088345F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33610EC59F364989538EBE11 /* Pods-knapsack2UITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = LWH67H9CS7;
 				INFOPLIST_FILE = knapsack2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = diligentagilty.knapsack2UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "knapsack2/knapsack2UITests-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = knapsack2;
 			};
 			name = Release;

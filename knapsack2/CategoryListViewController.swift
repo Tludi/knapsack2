@@ -81,7 +81,7 @@ class CategoryListViewController: UIViewController, UITableViewDataSource, UITab
   
   
   
-  func changeItemCount(sender : UIButton!) {
+  @objc func changeItemCount(sender : UIButton!) {
     let cell = sender.superview!.superview! as! UITableViewCell
     let itemLabel = cell.viewWithTag(1) as! UILabel
     let itemCountLabel = cell.viewWithTag(5) as! UILabel

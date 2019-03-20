@@ -29,7 +29,7 @@
 #include <realm/util/safe_int_ops.hpp>
 #include <realm/util/buffer.hpp>
 #include <realm/util/string_buffer.hpp>
-#include <realm/impl/continuous_transactions_history.hpp>
+#include <realm/impl/cont_transact_hist.hpp>
 #include <realm/impl/transact_log.hpp>
 
 namespace realm {
@@ -59,7 +59,7 @@ public:
     class Interrupted; // Exception
     class SimpleIndexTranslator;
 
-    virtual std::string get_database_path() = 0;
+    virtual std::string get_database_path() const = 0;
 
     /// Called during construction of the associated SharedGroup object.
     ///
@@ -91,7 +91,87 @@ public:
     /// The default implementation does nothing.
     virtual void terminate_session() noexcept = 0;
 
-//  remoded comments from base pod
+    /// \defgroup replication_transactions
+    //@{
+
+    /// From the point of view of the Replication class, a transaction is
+    /// initiated when, and only when the associated SharedGroup object calls
+    /// initiate_transact() and the call is successful. The associated
+    /// SharedGroup object must terminate every initiated transaction either by
+    /// calling finalize_commit() or by calling abort_transact(). It may only
+    /// call finalize_commit(), however, after calling prepare_commit(), and
+    /// only when prepare_commit() succeeds. If prepare_commit() fails (i.e.,
+    /// throws) abort_transact() must still be called.
+    ///
+    /// The associated SharedGroup object is supposed to terminate a transaction
+    /// as soon as possible, and is required to terminate it before attempting
+    /// to initiate a new one.
+    ///
+    /// initiate_transact() is called by the associated SharedGroup object as
+    /// part of the initiation of a transaction, and at a time where the caller
+    /// has acquired exclusive write access to the local Realm. The Replication
+    /// implementation is allowed to perform "precursor transactions" on the
+    /// local Realm at this time. During the initiated transaction, the
+    /// associated SharedGroup object must inform the Replication object of all
+    /// modifying operations by calling set_value() and friends.
+    ///
+    /// FIXME: There is currently no way for implementations to perform
+    /// precursor transactions, since a regular transaction would cause a dead
+    /// lock when it tries to acquire a write lock. Consider giving access to
+    /// special non-locking precursor transactions via an extra argument to this
+    /// function.
+    ///
+    /// prepare_commit() serves as the first phase of a two-phase commit. This
+    /// function is called by the associated SharedGroup object immediately
+    /// before the commit operation on the local Realm. The associated
+    /// SharedGroup object will then, as the second phase, either call
+    /// finalize_commit() or abort_transact() depending on whether the commit
+    /// operation succeeded or not. The Replication implementation is allowed to
+    /// modify the Realm via the associated SharedGroup object at this time
+    /// (important to in-Realm histories).
+    ///
+    /// initiate_transact() and prepare_commit() are allowed to block the
+    /// calling thread if, for example, they need to communicate over the
+    /// network. If a calling thread is blocked in one of these functions, it
+    /// must be possible to interrupt the blocking operation by having another
+    /// thread call interrupt(). The contract is as follows: When interrupt() is
+    /// called, then any execution of initiate_transact() or prepare_commit(),
+    /// initiated before the interruption, must complete without blocking, or
+    /// the execution must be aborted by throwing an Interrupted exception. If
+    /// initiate_transact() or prepare_commit() throws Interrupted, it counts as
+    /// a failed operation.
+    ///
+    /// finalize_commit() is called by the associated SharedGroup object
+    /// immediately after a successful commit operation on the local Realm. This
+    /// happens at a time where modification of the Realm is no longer possible
+    /// via the associated SharedGroup object. In the case of in-Realm
+    /// histories, the changes are automatically finalized as part of the commit
+    /// operation performed by the caller prior to the invocation of
+    /// finalize_commit(), so in that case, finalize_commit() might not need to
+    /// do anything.
+    ///
+    /// abort_transact() is called by the associated SharedGroup object to
+    /// terminate a transaction without committing. That is, any transaction
+    /// that is not terminated by finalize_commit() is terminated by
+    /// abort_transact(). This could be due to an explicit rollback, or due to a
+    /// failed commit attempt.
+    ///
+    /// Note that finalize_commit() and abort_transact() are not allowed to
+    /// throw.
+    ///
+    /// \param current_version The version of the snapshot that the current
+    /// transaction is based on.
+    ///
+    /// \param history_updated Pass true only when the history has already been
+    /// updated to reflect the currently bound snapshot, such as when
+    /// _impl::History::update_early_from_top_ref() was called during the
+    /// transition from a read transaction to the current write transaction.
+    ///
+    /// \return prepare_commit() returns the version of the new snapshot
+    /// produced by the transaction.
+    ///
+    /// \throw Interrupted Thrown by initiate_transact() and prepare_commit() if
+    /// a blocking operation was interrupted.
 
     void initiate_transact(version_type current_version, bool history_updated);
     version_type prepare_commit(version_type current_version);
@@ -314,6 +394,7 @@ public:
     {
     }
 
+    std::string get_database_path() const override;
 protected:
     typedef Replication::version_type version_type;
 
@@ -328,7 +409,6 @@ protected:
 
     BinaryData get_uncommitted_changes() const noexcept;
 
-    std::string get_database_path() override;
     void initialize(SharedGroup&) override;
     void do_initiate_transact(version_type, bool) override;
     version_type do_prepare_commit(version_type orig_version) override;

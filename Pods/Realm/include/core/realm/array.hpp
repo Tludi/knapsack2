@@ -99,9 +99,8 @@ inline T no0(T v)
 /// found'. It is similar in function to std::string::npos.
 const size_t npos = size_t(-1);
 
-// Maximum number of bytes that the payload of an array can be
-const size_t max_array_payload         = 0x00ffffffL;
-const size_t max_array_payload_aligned = 0x00fffff8L;
+const size_t max_array_size = 0x00ffffffL;            // Maximum number of elements in an array
+const size_t max_array_payload_aligned = 0x07ffffc0L; // Maximum number of bytes that the payload of an array can be
 
 /// Alias for realm::npos.
 const size_t not_found = npos;
@@ -117,12 +116,13 @@ class ArrayWriterBase;
 }
 
 
-#ifdef REALM_DEBUG
 struct MemStats {
     size_t allocated = 0;
     size_t used = 0;
     size_t array_count = 0;
 };
+
+#ifdef REALM_DEBUG
 template <class C, class T>
 std::basic_ostream<C, T>& operator<<(std::basic_ostream<C, T>& out, MemStats stats);
 #endif
@@ -343,10 +343,15 @@ public:
     bool is_empty() const noexcept;
     Type get_type() const noexcept;
 
+
     static void add_to_column(IntegerColumn* column, int64_t value);
 
     void insert(size_t ndx, int_fast64_t value);
     void add(int_fast64_t value);
+
+    // Used from ArrayBlob
+    size_t blob_size() const noexcept;
+    ref_type blob_replace(size_t begin, size_t end, const char* data, size_t data_size, bool add_zero_term);
 
     /// This function is guaranteed to not throw if the current width is
     /// sufficient for the specified value (e.g. if you have called
@@ -517,7 +522,28 @@ public:
     size_t upper_bound_int(int64_t value) const noexcept;
     //@}
 
-//    removed comments from base pod
+    /// \brief Search the \c Array for a value greater or equal than \a target,
+    /// starting the search at the \a start index. If \a indirection is
+    /// provided, use it as a look-up table to iterate over the \c Array.
+    ///
+    /// If \a indirection is not provided, then the \c Array must be sorted in
+    /// ascending order. If \a indirection is provided, then its values should
+    /// point to indices in this \c Array in such a way that iteration happens
+    /// in ascending order.
+    ///
+    /// Behaviour is undefined if:
+    /// - a value in \a indirection is out of bounds for this \c Array;
+    /// - \a indirection does not contain at least as many elements as this \c
+    ///   Array;
+    /// - sorting conditions are not respected;
+    /// - \a start is greater than the number of elements in this \c Array or
+    ///   \a indirection (if provided).
+    ///
+    /// \param target the smallest value to search for
+    /// \param start the offset at which to start searching in the array
+    /// \param indirection an \c Array containing valid indices of values in
+    ///        this \c Array, sorted in ascending order
+    /// \return the index of the value if found, or realm::not_found otherwise
     size_t find_gte(const int64_t target, size_t start, size_t end = size_t(-1)) const;
 
     void preset(int64_t min, int64_t max, size_t num_items);
@@ -824,17 +850,20 @@ public:
     /// FIXME: Belongs in IntegerArray
     static size_t calc_aligned_byte_size(size_t size, int width);
 
+    class MemUsageHandler {
+    public:
+        virtual void handle(ref_type ref, size_t allocated, size_t used) = 0;
+    };
+
+    void report_memory_usage(MemUsageHandler&) const;
+
+    void stats(MemStats& stats_dest) const noexcept;
+
 #ifdef REALM_DEBUG
     void print() const;
     void verify() const;
     typedef size_t (*LeafVerifier)(MemRef, Allocator&);
     void verify_bptree(LeafVerifier) const;
-    class MemUsageHandler {
-    public:
-        virtual void handle(ref_type ref, size_t allocated, size_t used) = 0;
-    };
-    void report_memory_usage(MemUsageHandler&) const;
-    void stats(MemStats& stats_dest) const;
     typedef void (*LeafDumper)(MemRef, Allocator&, std::ostream&, int level);
     void dump_bptree_structure(std::ostream&, int level, LeafDumper) const;
     void to_dot(std::ostream&, StringData title = StringData()) const;
@@ -986,9 +1015,7 @@ protected:
     /// log2. Posssible results {0, 1, 2, 4, 8, 16, 32, 64}
     static size_t bit_width(int64_t value);
 
-#ifdef REALM_DEBUG
     void report_memory_usage_2(MemUsageHandler&) const;
-#endif
 
 private:
     Getter m_getter = nullptr; // cached to avoid indirection
@@ -1606,7 +1633,7 @@ inline size_t Array::get_capacity_from_header(const char* header) noexcept
 {
     typedef unsigned char uchar;
     const uchar* h = reinterpret_cast<const uchar*>(header);
-    return (size_t(h[0]) << 16) + (size_t(h[1]) << 8) + h[2];
+    return (size_t(h[0]) << 19) + (size_t(h[1]) << 11) + (h[2] << 3);
 }
 
 
@@ -1703,7 +1730,7 @@ inline void Array::set_header_width(int value, char* header) noexcept
 
 inline void Array::set_header_size(size_t value, char* header) noexcept
 {
-    REALM_ASSERT_3(value, <=, max_array_payload);
+    REALM_ASSERT_3(value, <=, max_array_size);
     typedef unsigned char uchar;
     uchar* h = reinterpret_cast<uchar*>(header);
     h[5] = uchar((value >> 16) & 0x000000FF);
@@ -1714,12 +1741,12 @@ inline void Array::set_header_size(size_t value, char* header) noexcept
 // Note: There is a copy of this function is test_alloc.cpp
 inline void Array::set_header_capacity(size_t value, char* header) noexcept
 {
-    REALM_ASSERT_3(value, <=, max_array_payload);
+    REALM_ASSERT_3(value, <=, (0xffffff << 3));
     typedef unsigned char uchar;
     uchar* h = reinterpret_cast<uchar*>(header);
-    h[0] = uchar((value >> 16) & 0x000000FF);
-    h[1] = uchar((value >> 8) & 0x000000FF);
-    h[2] = uchar(value & 0x000000FF);
+    h[0] = uchar((value >> 19) & 0x000000FF);
+    h[1] = uchar((value >> 11) & 0x000000FF);
+    h[2] = uchar(value >> 3 & 0x000000FF);
 }
 
 
