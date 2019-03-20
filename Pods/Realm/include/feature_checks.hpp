@@ -16,12 +16,15 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-#import <Foundation/Foundation.h>
+#ifndef REALM_OS_FEATURE_CHECKS_HPP
+#define REALM_OS_FEATURE_CHECKS_HPP
 
-#import "RLMResults.h"
+#include <realm/version.hpp>
 
-@class RLMSyncPermission;
+#if REALM_ENABLE_SYNC
 
-// A private subclass of `RLMResults`.
-@interface RLMSyncPermissionResults : RLMResults<RLMSyncPermission *>
-@end
+#include <realm/sync/version.hpp>
+
+#endif // REALM_ENABLE_SYNC
+
+#endif // REALM_OS_FEATURE_CHECKS_HPP

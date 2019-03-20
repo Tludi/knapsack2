@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UITableViewCell.appearance().backgroundColor = UIColor.clear
     checkIfMasterListExists()
     
+    print("checked master list")
+    
     let config = Realm.Configuration(
       schemaVersion: 1,
       
@@ -66,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   
   func checkIfMasterListExists() {
-    
+
     if masterList.count == 0 {
       print("Master List Being Created")
       DataManager.populateRealm()

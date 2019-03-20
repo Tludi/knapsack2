@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 //
-// Copyright 2017 Realm Inc.
+// Copyright 2018 Realm Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,12 +16,38 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-#import <Foundation/Foundation.h>
+#ifndef REALM_OS_PARTIAL_SYNC_WORK_QUEUE
+#define REALM_OS_PARTIAL_SYNC_WORK_QUEUE
 
-#import "RLMResults.h"
+#include <condition_variable>
+#include <functional>
+#include <mutex>
+#include <thread>
+#include <vector>
 
-@class RLMSyncPermission;
+namespace realm {
+namespace _impl {
+namespace partial_sync {
 
-// A private subclass of `RLMResults`.
-@interface RLMSyncPermissionResults : RLMResults<RLMSyncPermission *>
-@end
+class WorkQueue {
+public:
+    ~WorkQueue();
+    void enqueue(std::function<void()> function);
+
+private:
+    void create_thread();
+
+    std::mutex m_mutex;
+    std::condition_variable m_cv;
+    std::vector<std::function<void()>> m_queue;
+    std::thread m_thread;
+    bool m_stopping = false;
+    bool m_stopped = true;
+};
+
+
+} // namespace partial_sync
+} // namespace _impl
+} // namespace realm
+
+#endif // REALM_OS_PARTIAL_SYNC_WORK_QUEUE

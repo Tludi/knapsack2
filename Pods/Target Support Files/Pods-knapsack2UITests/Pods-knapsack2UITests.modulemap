@@ -1,0 +1,6 @@
+framework module Pods_knapsack2UITests {
+  umbrella header "Pods-knapsack2UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
