@@ -15,42 +15,54 @@ class NewTripViewController: UIViewController {
   let realm = try! Realm()
   var editedTrip = Trip()
   var editToggle = false
-  
+  let formatter = DateFormatter()
+    
   @IBOutlet weak var tripDetailLabel: UILabel!
   @IBOutlet var newTripView: UIView!
   @IBOutlet weak var tripNameField: UITextField!
-  @IBOutlet weak var dateTextField: UITextField!
+//  @IBOutlet weak var dateTextField: UITextField!
   @IBOutlet weak var nightsCount: UILabel!
-  @IBOutlet weak var slider: UISlider!
+//  @IBOutlet weak var slider: UISlider!
   
-  @IBAction func dateTextFieldEditing(sender: UITextField) {
-    // configure the date picker
-    let datePickerView:UIDatePicker = UIDatePicker()
-    datePickerView.datePickerMode = UIDatePicker.Mode.date
-    sender.inputView = datePickerView
+  @IBOutlet weak var newTripDatePicker: UIDatePicker!
+  @IBAction func newTripDatePickerAction(_ sender: UIDatePicker) {
+    }
     
-    datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
-    
-//    datePickerView.addTarget(self, action: #selector(NewTripViewController.datePickerValueChanged(_:)), for: UIControlEvents.ValueChanged)
-    
-    // The above code used to be the following. Changed by swift 2.2 and 3
-    //  datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-  }
+//    @IBAction func dateTextFieldEditing(sender: UITextField) {
+//    // configure the date picker
+//    let datePickerView:UIDatePicker = UIDatePicker()
+//    datePickerView.datePickerMode = UIDatePicker.Mode.date
+//    sender.inputView = datePickerView
+//
+//    datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
+//
+////    datePickerView.addTarget(self, action: #selector(NewTripViewController.datePickerValueChanged(_:)), for: UIControlEvents.ValueChanged)
+//
+//    // The above code used to be the following. Changed by swift 2.2 and 3
+//    //  datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+//  }
   
-  @IBAction func nightsSlider(sender: UISlider) {
-    let nights = Int(sender.value)
-    nightsCount.text = "\(nights)"
-  }
+//  @IBAction func nightsSlider(sender: UISlider) {
+//    let nights = Int(sender.value)
+//    nightsCount.text = "\(nights)"
+//  }
   
   @IBOutlet weak var addtripButtonLabel: UIButton!
-  @IBAction func addTripButton(sender: UIButton) {
     
+    @IBAction func addTrip(_ sender: UIButton) {
+        print("got this far")
+    }
+    @IBAction func addTripButton() {
+    
+    formatter.dateFormat = "dd/MM/yyyy"
+    print("got this far")
+
     // check if edit or add was selected in previous view
     if editToggle == true { // Edit existing Trip()
       try! realm.write {
         self.editedTrip.tripName = self.tripNameField.text!
-        self.editedTrip.startDate = self.dateTextField.text!
-        self.editedTrip.numberOfDays = self.nightsCount.text!
+        self.editedTrip.startDate = formatter.string(from: newTripDatePicker.date)
+//        self.editedTrip.numberOfDays = self.nightsCount.text!
       }
       self.performSegue(withIdentifier: "addTripButtonUnwind", sender: self)
     } else {  // add new Trip()
@@ -72,18 +84,18 @@ class NewTripViewController: UIViewController {
           }))
           self.present(noNameAlert, animated: true, completion: nil)
         // check for empty date
-        } else if dateTextField.text! == "" {
-          print("trip start date not chosen > '\(dateTextField.text!)'")
-          let noDateAlert = UIAlertController(title: "Trip Date", message: "Select a Start Date", preferredStyle: .alert)
-          noDateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
-            return
-          }))
-          self.present(noDateAlert, animated: true, completion: nil)
+//        } else if dateTextField.text! == "" {
+//          print("trip start date not chosen > '\(dateTextField.text!)'")
+//          let noDateAlert = UIAlertController(title: "Trip Date", message: "Select a Start Date", preferredStyle: .alert)
+//          noDateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+//            return
+//          }))
+//          self.present(noDateAlert, animated: true, completion: nil)
         } else {
           trip.tripName = newTripName
-          trip.startDate = dateTextField.text!
-          print("starDate after selection '\(trip.startDate)'")
-          trip.numberOfDays = nightsCount.text!
+          trip.startDate = formatter.string(from: newTripDatePicker.date)
+          print("startDate after selection '\(trip.startDate)'")
+//          trip.numberOfDays = nightsCount.text!
           
           let newList = ItemList()
           newList.id = NSUUID().uuidString
@@ -143,10 +155,11 @@ class NewTripViewController: UIViewController {
     if editedTrip.tripName != "defaulttripname" {
       // populate data fields with existing data
       tripNameField.text = editedTrip.tripName
-      dateTextField.text = editedTrip.startDate
+        newTripDatePicker.date = formatter.date(from: editedTrip.startDate)!
+//      dateTextField.text = editedTrip.startDate
       // convert String to Float
-      let sliderValueConversion = NumberFormatter().number(from: editedTrip.numberOfDays)?.floatValue
-      slider.value = sliderValueConversion!
+//      let sliderValueConversion = NumberFormatter().number(from: editedTrip.numberOfDays)?.floatValue
+//      slider.value = sliderValueConversion!
       // set detail label to Edit 'Trip'
       tripDetailLabel.text = "Edit \(editedTrip.tripName)"
       // set the add button label to Edit Trip if editing
@@ -163,8 +176,8 @@ class NewTripViewController: UIViewController {
 //    let trips = realm.objects(Trip)
 //    numberOfTrips.text = "\(trips.count)"
     
-    let nights = Int(slider.value)
-    nightsCount.text = "\(nights)"
+//    let nights = Int(slider.value)
+//    nightsCount.text = "\(nights)"
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -173,11 +186,11 @@ class NewTripViewController: UIViewController {
 
   
   @objc func datePickerValueChanged(sender:UIDatePicker) {
-    let dateFormatter = DateFormatter()
     
-    dateFormatter.dateStyle = DateFormatter.Style.medium
-    dateFormatter.timeStyle = DateFormatter.Style.none
-    dateTextField.text = dateFormatter.string(from: sender.date)
+    
+    formatter.dateStyle = DateFormatter.Style.medium
+    formatter.timeStyle = DateFormatter.Style.none
+//    dateTextField.text = dateFormatter.string(from: sender.date)
   }
 
 }

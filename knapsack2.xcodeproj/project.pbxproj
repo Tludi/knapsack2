@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006BAEEB2242A99D0006F548 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEE52242A99D0006F548 /* TPKeyboardAvoidingTableView.m */; };
+		006BAEEC2242A99D0006F548 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEE52242A99D0006F548 /* TPKeyboardAvoidingTableView.m */; };
+		006BAEED2242A99D0006F548 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEE52242A99D0006F548 /* TPKeyboardAvoidingTableView.m */; };
+		006BAEEE2242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEE82242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m */; };
+		006BAEEF2242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEE82242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m */; };
+		006BAEF02242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEE82242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m */; };
+		006BAEF12242A99D0006F548 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEEA2242A99D0006F548 /* TPKeyboardAvoidingScrollView.m */; };
+		006BAEF22242A99D0006F548 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEEA2242A99D0006F548 /* TPKeyboardAvoidingScrollView.m */; };
+		006BAEF32242A99D0006F548 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEEA2242A99D0006F548 /* TPKeyboardAvoidingScrollView.m */; };
+		006BAEF62242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEF52242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		006BAEF72242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEF52242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		006BAEF82242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BAEF52242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		008AFA501EC511760088345F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA4F1EC511760088345F /* AppDelegate.swift */; };
 		008AFA521EC511760088345F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AFA511EC511760088345F /* ViewController.swift */; };
 		008AFA551EC511760088345F /* OldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008AFA531EC511760088345F /* OldMain.storyboard */; };
@@ -88,6 +100,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006BAEE52242A99D0006F548 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		006BAEE62242A99D0006F548 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		006BAEE72242A99D0006F548 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		006BAEE82242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		006BAEE92242A99D0006F548 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		006BAEEA2242A99D0006F548 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		006BAEF42242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		006BAEF52242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		008AFA4C1EC511760088345F /* knapsack2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = knapsack2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008AFA4F1EC511760088345F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		008AFA511EC511760088345F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +247,14 @@
 		008AFA811EC521E90088345F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				006BAEF42242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				006BAEF52242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				006BAEE62242A99D0006F548 /* TPKeyboardAvoidingCollectionView.h */,
+				006BAEE82242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m */,
+				006BAEE72242A99D0006F548 /* TPKeyboardAvoidingScrollView.h */,
+				006BAEEA2242A99D0006F548 /* TPKeyboardAvoidingScrollView.m */,
+				006BAEE92242A99D0006F548 /* TPKeyboardAvoidingTableView.h */,
+				006BAEE52242A99D0006F548 /* TPKeyboardAvoidingTableView.m */,
 				008AFA561EC511760088345F /* Assets.xcassets */,
 				008AFA531EC511760088345F /* OldMain.storyboard */,
 				008AFA5B1EC511760088345F /* Info.plist */,
@@ -554,17 +582,21 @@
 			files = (
 				008AFA521EC511760088345F /* ViewController.swift in Sources */,
 				00CF0CE51EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
+				006BAEEB2242A99D0006F548 /* TPKeyboardAvoidingTableView.m in Sources */,
 				00CF0CF11EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CE91EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
 				008AFAB21EC527FA0088345F /* NewTripViewController.swift in Sources */,
 				00CF0CD51EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
 				008AFAAA1EC525090088345F /* MasterItemList.swift in Sources */,
 				008AFAA21EC524F20088345F /* MasterItems.swift in Sources */,
+				006BAEF62242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				008AFAAE1EC527ED0088345F /* TripListViewController.swift in Sources */,
+				006BAEEE2242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				008AFAA61EC524FA0088345F /* Trip.swift in Sources */,
 				00CF0CE11EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				00CF0CF51EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				008AFA9E1EC524930088345F /* TripViewController.swift in Sources */,
+				006BAEF12242A99D0006F548 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				00CF0CD91EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
 				008AFA501EC511760088345F /* AppDelegate.swift in Sources */,
 				00CF0CDD1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
@@ -576,11 +608,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CF0CEA1EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
+				006BAEEF2242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				006BAEEC2242A99D0006F548 /* TPKeyboardAvoidingTableView.m in Sources */,
 				00CF0CF61EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				00CF0CE61EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				008AFAAB1EC525090088345F /* MasterItemList.swift in Sources */,
 				00CF0CDA1EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
 				008AFAAF1EC527ED0088345F /* TripListViewController.swift in Sources */,
+				006BAEF72242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CE21EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				008AFAB31EC527FA0088345F /* NewTripViewController.swift in Sources */,
 				008AFA9F1EC524930088345F /* TripViewController.swift in Sources */,
@@ -588,6 +623,7 @@
 				008AFA651EC511760088345F /* knapsack2Tests.swift in Sources */,
 				00CF0CF21EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CD61EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
+				006BAEF22242A99D0006F548 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				00CF0CDE1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 				008AFAA31EC524F20088345F /* MasterItems.swift in Sources */,
 			);
@@ -598,11 +634,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CF0CEB1EC62F4200AAF0BD /* NewListViewController.swift in Sources */,
+				006BAEF02242A99D0006F548 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				006BAEED2242A99D0006F548 /* TPKeyboardAvoidingTableView.m in Sources */,
 				00CF0CF71EC62F8900AAF0BD /* ArchiveViewController.swift in Sources */,
 				00CF0CE71EC62F3300AAF0BD /* CustomItemViewController.swift in Sources */,
 				008AFAAC1EC525090088345F /* MasterItemList.swift in Sources */,
 				00CF0CDB1EC62F0F00AAF0BD /* ListItemsViewController.swift in Sources */,
 				008AFAB01EC527ED0088345F /* TripListViewController.swift in Sources */,
+				006BAEF82242A9B70006F548 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				00CF0CE31EC62F2700AAF0BD /* CategoryListViewController.swift in Sources */,
 				008AFAB41EC527FA0088345F /* NewTripViewController.swift in Sources */,
 				008AFAA01EC524930088345F /* TripViewController.swift in Sources */,
@@ -610,6 +649,7 @@
 				008AFA701EC511760088345F /* knapsack2UITests.swift in Sources */,
 				00CF0CF31EC62F5E00AAF0BD /* InformationPageViewController.swift in Sources */,
 				00CF0CD71EC62EF700AAF0BD /* UIViewExtensions.swift in Sources */,
+				006BAEF32242A99D0006F548 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				00CF0CDF1EC62F1A00AAF0BD /* CategoriesViewController.swift in Sources */,
 				008AFAA41EC524F20088345F /* MasterItems.swift in Sources */,
 			);

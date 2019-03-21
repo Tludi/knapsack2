@@ -59,14 +59,14 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Set the background image of the trips table
     let bgImage: UIImage = UIImage(named: "iPhone5bg.png")!
     itemTable.backgroundView = UIImageView(image: bgImage)
-    
+    print(allTrips.first!.lists.first!.items.first!)
     // AdMob code
 //    print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
     // This is a test ID, use for testing
 //    bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
     // This is the app unit ID for Admob - knapsack banner ad - front page
 //    bannerView.adUnitID = "ca-app-pub-9078081310752371/9311362449"
-    print("remember to reset adUnitID to production if using testing ID")
+//    print("remember to reset adUnitID to production if using testing ID")
 //    bannerView.rootViewController = self
 //    bannerView.load(GADRequest())
 
@@ -103,7 +103,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //**** hard coded --- FIX!
     // only counts the items in the default 'All Items List'
-    // which is ok if ALl Items List includes items from other lists
+    // which is ok if All Items List includes items from other lists
     let allTripItems = trip.lists.first?.items.filter("itemCount > 0").count
     
     // tripName
@@ -115,17 +115,17 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     dateLabel.text = "\(trip.startDate)"
     
     // Get days until Trip date
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = DateFormatter.Style.medium
-    let calendar = NSCalendar.current
-    let _:NSCalendar.Unit = .day
-    
-    let convertedCurrentDate = calendar.startOfDay(for: currentDate)
-//    let convertedCurrentDate = (calendar.startOfDayForDate(currentDate))
-    let startDate = (calendar.startOfDay(for: dateFormatter.date(from: trip.startDate)!))
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateStyle = DateFormatter.Style.medium
+//    let calendar = NSCalendar.current
+//    let _:NSCalendar.Unit = .day
+//
+//    let convertedCurrentDate = calendar.startOfDay(for: currentDate)
+////    let convertedCurrentDate = (calendar.startOfDayForDate(currentDate))
+//    let startDate = (calendar.startOfDay(for: dateFormatter.date(from: trip.startDate)!))
     
 //    ********** Double check this calculation  *******
-    let daysUntilTrip = startDate.timeIntervalSince(convertedCurrentDate)
+//    let daysUntilTrip = startDate.timeIntervalSince(convertedCurrentDate)
 //    let daysUntilTrip = calendar.components(unit, fromDate: convertedCurrentDate, toDate: startDate, options: [] ).day
     
     
@@ -140,8 +140,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
       archiveFlag?.isHidden = true
     }
     // daysToGo label
-    let daysToGo = cell.contentView.viewWithTag(6) as! UILabel
-    daysToGo.text = "\(daysUntilTrip)"
+//    let daysToGo = cell.contentView.viewWithTag(6) as! UILabel
+//    daysToGo.text = "\(daysUntilTrip)"
     
     return cell
   }
