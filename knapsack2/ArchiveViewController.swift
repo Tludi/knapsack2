@@ -49,6 +49,7 @@ class ArchiveViewController: UIViewController, UITableViewDataSource, UITableVie
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "archiveTripCell", for: indexPath)
+
     let trip = archivedTrips[indexPath.row]
     
     

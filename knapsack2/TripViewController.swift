@@ -59,7 +59,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Set the background image of the trips table
     let bgImage: UIImage = UIImage(named: "iPhone5bg.png")!
     itemTable.backgroundView = UIImageView(image: bgImage)
-    print(allTrips.first!.lists.first!.items.first!)
+    print(allTrips.first!.tripName)
     // AdMob code
 //    print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
     // This is a test ID, use for testing
@@ -207,8 +207,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
       self.itemTable.reloadData()
     }
     
-    let copyimage = UIImage(named: "copybox.png")!
-    copyCellAction.backgroundColor = UIColor(patternImage: copyimage)
+//    let copyimage = UIImage(named: "copybox.png")!
+//    copyCellAction.backgroundColor = UIColor(patternImage: copyimage)
     
     
     
@@ -227,8 +227,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
       }
       self.itemTable.reloadData()
     }
-    let archiveimage = UIImage(named: "archivebox.png")!
-    archiveCellAction.backgroundColor = UIColor(patternImage: archiveimage)
+//    let archiveimage = UIImage(named: "archivebox.png")!
+//    archiveCellAction.backgroundColor = UIColor(patternImage: archiveimage)
     
     // Edit trip functions
     let editCellAction = UITableViewRowAction(style: .normal, title: "    ") { (UITableViewRowAction, indexPath) -> Void in
@@ -237,8 +237,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
       self.selectedTrip = self.presentedTrips[indexPath.row]
       self.performSegue(withIdentifier: "editTripData", sender: self)
     }
-    let editimage = UIImage(named: "editbox.png")!
-    editCellAction.backgroundColor = UIColor(patternImage: editimage)
+//    let editimage = UIImage(named: "editbox.png")!
+//    editCellAction.backgroundColor = UIColor(patternImage: editimage)
 
     
     // Delete trip functions
@@ -264,8 +264,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
       self.present(deleteAlert, animated: true, completion: nil)
     }
     
-    let deleteImage = UIImage(named: "deleteBoxLG.png")!
-    deleteCellAction.backgroundColor = UIColor(patternImage: deleteImage)
+//    let deleteImage = UIImage(named: "deleteBoxLG.png")!
+//    deleteCellAction.backgroundColor = UIColor(patternImage: deleteImage)
     
     // first item in array is far right in cell
     return [deleteCellAction, editCellAction, copyCellAction, archiveCellAction]
@@ -275,25 +275,34 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
   
 
   
-  
-  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "showTripLists" {
-      if let destinationController = segue.destination as? TripListViewController {
-        if let tripIndex = itemTable.indexPathForSelectedRow {
-          let chosenTrip = presentedTrips[tripIndex.row]
-          destinationController.chosenTrip = chosenTrip
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is TripListViewController {
+            let destinationController = segue.destination as? TripListViewController
+            let tripIndex = itemTable.indexPathForSelectedRow
+            let chosenTrip = presentedTrips[(tripIndex?.row)!]
+            destinationController?.chosenTrip = chosenTrip
         }
-      }
     }
-    
-    if segue.identifier == "editTripData" {
-      if let destinationController = segue.destination as? NewTripViewController {
-          print("clicked edit trip")
-          destinationController.editedTrip = selectedTrip
-          destinationController.editToggle = true
-      }
-    }
-  } // end prepareforsegue
+//  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    print("segue")
+//    if segue.identifier == "showTripLists" {
+//      if let destinationController = segue.destination as? TripListViewController {
+//        if let tripIndex = itemTable.indexPathForSelectedRow {
+//          let chosenTrip = presentedTrips[tripIndex.row]
+//            print(chosenTrip.tripName)
+//          destinationController.chosenTrip = chosenTrip
+//        }
+//      }
+//    }
+//
+//    if segue.identifier == "editTripData" {
+//      if let destinationController = segue.destination as? NewTripViewController {
+//          print("clicked edit trip")
+//          destinationController.editedTrip = selectedTrip
+//          destinationController.editToggle = true
+//      }
+//    }
+//  } // end prepareforsegue
 
 
 

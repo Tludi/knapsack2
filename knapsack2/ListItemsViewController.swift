@@ -25,12 +25,14 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   @IBOutlet weak var listItemTable: UITableView!
   @IBOutlet weak var addItemBox: UIView!
   @IBAction func addItemBoxButton(sender: UIButton) {
+    print("hit the add items button")
   }
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    print("\(passedTrip.tripName) has \(passedTrip.lists.count) lists " )
+    print(passedTrip.lists.first?.items.first?.itemName as Any)
     // Set the background image of the listItem table
     let bgImage: UIImage = UIImage(named: "iPhone5bg.png")!
     listItemTable.backgroundView = UIImageView(image: bgImage)
@@ -206,15 +208,15 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showAddItem" {
-      if let destinationController = segue.destination as? CategoriesViewController {
-        destinationController.passedList = chosenList
-        destinationController.passedTrip = passedTrip
-      }
+      let destinationController = segue.destination as? CategoriesViewController
+        destinationController?.passedList = chosenList
+        destinationController?.passedTrip = passedTrip
+    
     } else if segue.identifier == "addItemBox" {
-      if let destinationController = segue.destination as? CategoriesViewController {
-        destinationController.passedList = chosenList
-        destinationController.passedTrip = passedTrip
-      }
+      let destinationController = segue.destination as? CategoriesViewController
+        destinationController?.passedList = chosenList
+        destinationController?.passedTrip = passedTrip
+    
     }
   }
 

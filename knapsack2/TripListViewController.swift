@@ -11,6 +11,8 @@ import RealmSwift
 
 class TripListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+
   // Trip selected
   var chosenTrip = Trip()
   let customList = try! Realm().objects(ItemList.self).filter("id = '2'").first!
@@ -24,6 +26,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print("hello from the Items page")
     // try to hide the addButton. Show for testing
     addButton.tintColor = UIColor.clear
     // set trip label to name of current trip
@@ -36,15 +39,20 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
     
   }
   
-  func viewWillAppear() {
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     listTable.reloadData()
+    print("trip Packing list")
   }
+    
+    
+    
+
 
   // set two sections - One for "All Items" and one for Categories
-  func numberOfSections(in tableView: UITableView) -> Int {
-//  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 3
-  }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
   
   
   //*** Get number of rows per section **//
@@ -71,6 +79,7 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
     } else {
       return 1 // FIRST and SECOND SECTION
     }
+//    return 1
   }
   
   
@@ -90,11 +99,12 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
     // create an array of selectedCategories that have been selected
     var selectedCategories = [String]()
     for i in 0..<selectedItems.count {
-      if selectedCategories.contains(selectedItems[i].itemCategory) == false {
+      if
+    selectedCategories.contains(selectedItems[i].itemCategory) == false {
         selectedCategories.append(selectedItems[i].itemCategory)
       }
     }
-    
+
     //*** FIRST SECTION ***//
     //*** All Items ***//
     if indexPath.section == 0 {
@@ -114,10 +124,10 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
       // Image for All Items
       let categoryImage = cell.contentView.viewWithTag(5) as! UIImageView
       categoryImage.image = UIImage(named: "knapsackIcon")
-      
-      
-      
-      
+
+
+
+
     //*** SECOND SECTION ***//
     //*** Custom Items ***//
     } else if indexPath.section == 1 {
@@ -133,10 +143,10 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
         // Image for All Items
         let categoryImage = cell.contentView.viewWithTag(5) as! UIImageView
         categoryImage.image = UIImage(named: "customIcon")
-      
-      
-      
-      
+
+
+
+
     //*** THIRD SECTION ***//
     //*** Chosen Category Items ***//
     } else {
@@ -158,29 +168,46 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
         let categoryImage = cell.contentView.viewWithTag(5) as! UIImageView
         categoryImage.image = UIImage(named: "\(currentCategory)Icon")
     }
-    
+//    let testLabel = cell.contentView.viewWithTag(1) as! UILabel
+//    testLabel.text = "Hello there"
     return cell
   }
   
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
     if segue.identifier == "showListItems" {
-      if let destinationController = segue.destination as? ListItemsViewController {
-        if let listPath = listTable.indexPathForSelectedRow {
-          let cell = tableView(listTable, cellForRowAt: listPath)
-//          let cell = tableView(listTable, cellForRowAtIndexPath: listPath)
-          let category = cell.contentView.viewWithTag(1) as! UILabel
-          
-          // Current Trip first list - master List "All Items"
-          let allItemsList = chosenTrip.lists[0]
-          
-          destinationController.chosenList = allItemsList
-          destinationController.customList = customList
-          destinationController.chosenCategory = category.text!
-          destinationController.passedTrip = chosenTrip
-        }
-      }
+        let destinationController = segue.destination as? ListItemsViewController
+        let listPath = listTable.indexPathForSelectedRow
+        let cell = tableView(listTable, cellForRowAt: listPath!)
+        let category = cell.contentView.viewWithTag(1) as! UILabel
+        let allItemsList = chosenTrip.lists[0]
+        destinationController?.chosenList = allItemsList
+        destinationController?.customList = customList
+        destinationController?.chosenCategory = category.text!
+        destinationController?.passedTrip = chosenTrip
+
     }
+    
+    
+    
+//    if segue.identifier == "showListItems" {
+//      if let destinationController = segue.destination as? ListItemsViewController {
+//        if let listPath = listTable.indexPathForSelectedRow {
+//          let cell = tableView(listTable, cellForRowAt: listPath)
+////          let cell = tableView(listTable, cellForRowAtIndexPath: listPath)
+//          let category = cell.contentView.viewWithTag(1) as! UILabel
+//
+//          // Current Trip first list - master List "All Items"
+//          let allItemsList = chosenTrip.lists[0]
+//
+//          destinationController.chosenList = allItemsList
+//          destinationController.customList = customList
+//          destinationController.chosenCategory = category.text!
+//          destinationController.passedTrip = chosenTrip
+//        }
+//      }
+//    }
   }
   
   
