@@ -207,16 +207,10 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showAddItem" {
+    if segue.identifier == "showAddItem" || segue.identifier == "addItemBox" {
       let destinationController = segue.destination as? CategoriesViewController
         destinationController?.passedList = chosenList
         destinationController?.passedTrip = passedTrip
-    
-    } else if segue.identifier == "addItemBox" {
-      let destinationController = segue.destination as? CategoriesViewController
-        destinationController?.passedList = chosenList
-        destinationController?.passedTrip = passedTrip
-    
     }
   }
 

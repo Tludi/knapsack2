@@ -24,8 +24,8 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
   @IBOutlet weak var categoryTable: UITableView!
   @IBOutlet weak var tripLengthLabel: UILabel!
   
-  
-  func viewWillAppear() {
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     categoryTable.reloadData()
   }
   
@@ -34,15 +34,19 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
 
     self.title = "Categories"
     tripLengthLabel.text = "Packing for \(passedTrip.numberOfDays) days"
+    
+    print(allItems.categories.count)
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 2
+    return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if section == 1 {
+    // section 0 is the first section
+    if section == 0 {
       return allItems.categories.count
+
     } else {
       if customList.items.count > 0 {
         return 1
@@ -57,10 +61,10 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     let categoryLabelName = cell.contentView.viewWithTag(1) as! UILabel
     let categoryImage = cell.contentView.viewWithTag(5) as! UIImageView
     
-    if indexPath.section == 0 {
+    if indexPath.section == 1 {
       categoryLabelName.text = "Custom"
       categoryImage.image = UIImage(named: "customIcon")
-    } else if indexPath.section == 1 {
+    } else if indexPath.section == 0 {
       
       let category = categories[indexPath.row]
       categoryLabelName.text = category.capitalized
@@ -76,25 +80,27 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showCategoryItems" {
-      if let destinationController = segue.destination as? CategoryListViewController {
+      let destinationController = segue.destination as? CategoryListViewController
+      let categoryIndex = categoryTable.indexPathForSelectedRow
         
-        if let categoryIndex = categoryTable.indexPathForSelectedRow {
-          var categoryToPass = ""
-          var listToPass = passedList
-          if categoryIndex.section == 0 {
-            categoryToPass = "custom items"
-            listToPass = customList
-          } else {
-            categoryToPass = categories[categoryIndex.row]
-            listToPass = passedList
-          }
-          
-          
-          destinationController.passedCategory = categoryToPass
-          destinationController.passedList = listToPass
-          destinationController.passedTrip = passedTrip
-        }
+        
+      var categoryToPass = ""
+      var listToPass = passedList
+        
+      if categoryIndex?.section == 1 {
+         categoryToPass = "custom items"
+         listToPass = customList
+      } else {
+        categoryToPass = categories[(categoryIndex?.row)!]
+         listToPass = passedList
       }
+          
+          
+        destinationController?.passedCategory = categoryToPass
+        destinationController?.passedList = listToPass
+        destinationController?.passedTrip = passedTrip
+        
+      
     }
   }
 
