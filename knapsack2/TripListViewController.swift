@@ -168,15 +168,15 @@ class TripListViewController: UIViewController, UITableViewDelegate, UITableView
         let categoryImage = cell.contentView.viewWithTag(5) as! UIImageView
         categoryImage.image = UIImage(named: "\(currentCategory)Icon")
     }
-//    let testLabel = cell.contentView.viewWithTag(1) as! UILabel
-//    testLabel.text = "Hello there"
+
     return cell
   }
   
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    if segue.identifier == "showListItems" {
+    if segue.destination is ListItemsViewController {
+//    if segue.identifier == "showListItems" {
         let destinationController = segue.destination as? ListItemsViewController
         let listPath = listTable.indexPathForSelectedRow
         let cell = tableView(listTable, cellForRowAt: listPath!)

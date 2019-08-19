@@ -59,7 +59,9 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Set the background image of the trips table
     let bgImage: UIImage = UIImage(named: "iPhone5bg.png")!
     itemTable.backgroundView = UIImageView(image: bgImage)
-    print(allTrips.first!.tripName)
+    if allTrips.count != 0 {
+        print(allTrips.first!.tripName)
+    }
     // AdMob code
 //    print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
     // This is a test ID, use for testing

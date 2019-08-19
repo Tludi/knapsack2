@@ -31,8 +31,10 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("\(passedTrip.tripName) has \(passedTrip.lists.count) lists " )
-    print(passedTrip.lists.first?.items.first?.itemName as Any)
+    //print("\(passedTrip.tripName) has \(passedTrip.lists.count) lists " )
+    //print(passedTrip.lists.first?.items.first?.itemName as Any)
+    print("Hello from the list")
+    
     // Set the background image of the listItem table
     let bgImage: UIImage = UIImage(named: "iPhone5bg.png")!
     listItemTable.backgroundView = UIImageView(image: bgImage)
@@ -43,11 +45,13 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     } else {
       filterCat = "itemCount > 0 AND itemCategory == '\(chosenCategory.lowercased())'"
     }
+    print(filterCat)
   }
   
-  
-  func viewWillAppear() {
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     listName.text = chosenCategory
+    print(chosenCategory)
     
     // show/hide addItemBox based on if there are any items in the list
     addItemBox.layer.cornerRadius = 20
@@ -63,30 +67,40 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   //*** Only one section in this table ***//
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 2
+    return 1
   }
   
   //*** Number of rows based on selected items with a count ***//
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print(filterCat)
+    
     if chosenList.listName == "All Items" {
-      if section == 0 {
-//        print("section 0 has \(customList.items.filter(filterCat).count)")
-        return customList.items.filter(filterCat).count
-      } else {
-        let itemsWithCount = chosenList.items.filter(filterCat)
-//        print("section 1 has \(itemsWithCount.count)")
-        return itemsWithCount.count      }
-    } else {
-      if section == 0 {
-//        print(filterCat)
-        let itemsWithCount = chosenList.items.filter(filterCat)
-//        print(itemsWithCount.count)
-        return itemsWithCount.count
-      } else {
-        return 0
+//      if section == 0 {
         
-      }
-    }
+      print("section 0 has \(chosenList.items.filter(filterCat).count)")
+
+//        print("item count is \(count)")
+        return chosenList.items.filter(filterCat).count
+      } else {
+        let itemsWithCount = chosenList.items
+          //chosenList.items //.filter(filterCat)
+        print("section 1 has \(itemsWithCount.count)")
+        return chosenList.items.filter(filterCat).count
+    
+        }
+//    } else if chosenList.listName {
+//      if section == 0 {
+//        print(filterCat)
+//        let itemsWithCount = chosenList.items.filter(filterCat)
+//        print(itemsWithCount.count)
+//        return itemsWithCount.count
+//    } else {
+//        return chosenList.items.filter(filterCat).count
+      
+//    }
+//    print(count)
+//    return count
+    
   }
   
   
@@ -94,13 +108,13 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   //*** show cells based on All Items or individual category selected from segue
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var itemsWithCount = chosenList.items.filter(filterCat)
+    let itemsWithCount = chosenList.items.filter(filterCat)
     
-    if indexPath.section == 0 {
-      itemsWithCount = customList.items.filter(filterCat)
-    } else {
-      itemsWithCount = chosenList.items.filter(filterCat)
-    }
+//    if indexPath.section == 0 {
+//      itemsWithCount = customList.items.filter(filterCat)
+//    } else {
+//      itemsWithCount = chosenList.items.filter(filterCat)
+//    }
 //    let sortedItemsWithCount = itemsWithCount.sorted("itemName") - Removed since sorting in database
     
     
@@ -124,7 +138,7 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
     categoryNameLabel.text = item.itemCategory.capitalized
     itemCountLabel.text = "\(item.itemCount)"
     
-    if indexPath.section == 0 {
+    if indexPath.section == 1 {
       itemIcon.image = UIImage(named: "customIcon")
     } else {
       itemIcon.image = UIImage(named: "\(item.itemCategory)Icon")
@@ -148,11 +162,11 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath)
     var itemsWithCount = chosenList.items.filter(filterCat)
-    if indexPath.section == 0 {
-      itemsWithCount = customList.items.filter(filterCat)
-    } else {
-      itemsWithCount = chosenList.items.filter(filterCat)
-    }
+//    if indexPath.section == 0 {
+//      itemsWithCount = customList.items.filter(filterCat)
+//    } else {
+//      itemsWithCount = chosenList.items.filter(filterCat)
+//    }
     let item = itemsWithCount[indexPath.row]
     
     let checkBox:UIImageView = cell?.contentView.viewWithTag(11) as! UIImageView
@@ -207,7 +221,8 @@ class ListItemsViewController: UIViewController, UITableViewDelegate, UITableVie
   
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showAddItem" || segue.identifier == "addItemBox" {
+    if segue.destination is CategoriesViewController {
+//    if segue.identifier == "showAddItem" || segue.identifier == "addItemBox" {
       let destinationController = segue.destination as? CategoriesViewController
         destinationController?.passedList = chosenList
         destinationController?.passedTrip = passedTrip
